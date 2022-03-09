@@ -36,7 +36,6 @@ myConnector.getSchema = function (schemaCallback) {
         //
         { id:'shortForecast', alias:'Short Description', dataType:tableau.dataTypeEnum.string}
         
-        
      ];
 
     var tableInfo= {
@@ -45,7 +44,7 @@ myConnector.getSchema = function (schemaCallback) {
         columns: cols
     };
 
-    schemaCallback([tableSchema]);
+    schemaCallback([tableInfo]);
 };
 
 myConnector.getData = function(table, doneCallback) {
