@@ -56,17 +56,7 @@
 
     };
 
-    tableau.registerConnector(myConnector);
-})();
-
-
-$(document).ready(function () {
-    $("#submitButton").click(function () {
-        tableau.connectionName = "NOAA Weather Feed";
-        tableau.submit();
-    });
-});
-
+    
 myConnector.getSchema = function (schemaCallback) {
     var cols = [
         { id:'id', alias:'ID', dataType: tableau.dataTypeEnum.string},
@@ -121,3 +111,13 @@ myConnector.getData = function(table, doneCallback) {
     });
 };
 
+tableau.registerConnector(myConnector);
+})();
+
+
+$(document).ready(function () {
+    $("#submitButton").click(function () {
+        tableau.connectionName = "NOAA Weather Feed";
+        tableau.submit();
+    });
+});
