@@ -72,6 +72,12 @@ myConnector.getData = function(table, doneCallback) {
         doneCallback();
     });
 };
-
+tableau.registerConnector(myConnector);
+    $(document).ready(function () {
+    $("#submitButton").click(function () {
+    tableau.connectionName = "NOAAWeatherDB";
+    tableau.submit();
+    });
+    });
 
 
