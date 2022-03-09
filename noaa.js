@@ -69,9 +69,9 @@ $(document).ready(function () {
 
     
 
-myConnector.getSchema = function (schemaCallback) {
-    var cols = [
-        { id:'id', alias:'ID', dataType: tableau.dataTypeEnum.string},
+// myConnector.getSchema = function (schemaCallback) {
+//     var cols = [
+//         { id:'id', alias:'ID', dataType: tableau.dataTypeEnum.string},
         //{ id:'geometry', alias:'Geometry',dataype: tableau.dataTypeEnum.geometry},
         //{ id:'units', alias:'Unit', dataType: tableau.dataTypeEnum.string},
         //{ id:'forecastGenerator', alias:'Forecast Generator', dataType: tableau.dataTypeEnum.string},
@@ -83,29 +83,29 @@ myConnector.getSchema = function (schemaCallback) {
         //{ id:'strartTime', alaias:'Start Time', dataType:tableau.dataTypeEnum.datetime},
         //
         //
-        { id:'shortForecast', alias:'Short Description', dataType:tableau.dataTypeEnum.string}
+       // { id:'shortForecast', alias:'Short Description', dataType:tableau.dataTypeEnum.string}
         //
         //
-     ];
+//      ];
 
-    var tableSchema = {
-        id: "NOAAWeatherDB",
-        alias: "NOAA Weather 7-day Forecast",
-        columns: cols
-    };
+//     var tableSchema = {
+//         id: "NOAAWeatherDB",
+//         alias: "NOAA Weather 7-day Forecast",
+//         columns: cols
+//     };
 
-    schemaCallback([tableSchema]);
-};
+//     schemaCallback([tableSchema]);
+// };
 
-myConnector.getData = function(table, doneCallback) {
-    $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(resp) {
-        var feat = resp.features,
-            tableData = [];
+// myConnector.getData = function(table, doneCallback) {
+//     $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(resp) {
+//         var feat = resp.features,
+//             tableData = [];
 
-        // Iterate over the JSON object
-        for (var i = 0, len = feat.length; i < len; i++) {
-            tableData.push({
-                "id": feat[i].id,
+//         // Iterate over the JSON object
+//         for (var i = 0, len = feat.length; i < len; i++) {
+//             tableData.push({
+//                 "id": feat[i].id,
                 //"geometry": feat[i].geometry,
                 //"units": feat[i].properties.units,
                 //"forecastGenerator": feat[i].properties.forecastGenerator,
@@ -115,13 +115,13 @@ myConnector.getData = function(table, doneCallback) {
                 //"name":feat[i].properties.name,
                 //"startTime":feat[i].properties.startTime,
                 //"shortForecast":feat[i].properties.shortForecast
-            });
-        }
+//             });
+//         }
 
-        table.appendRows(tableData);
-        doneCallback();
-    });
-};
+//         table.appendRows(tableData);
+//         doneCallback();
+//     });
+// };
 
 
 
