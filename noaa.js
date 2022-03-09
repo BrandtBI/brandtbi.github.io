@@ -60,15 +60,15 @@
 myConnector.getSchema = function (schemaCallback) {
     var cols = [
         { id:'id', alias:'ID', dataType: tableau.dataTypeEnum.string},
-        { id:'geometry', alias:'Geometry',dataype: tableau.dataTypeEnum.geometry},
-        { id:'units', alias:'Unit', dataType: tableau.dataTypeEnum.string},
-        { id:'forecastGenerator', alias:'Forecast Generator', dataType: tableau.dataTypeEnum.string},
-        { id:'generatedat', alias:'Generated At', dataype:tableau.dataTypeEnum.datetime},
-        { id:'updatedTime', alias:'Updated Time', dataType:tableau.dataTypeEnum.datetime},
-       // { id:'validTimes', alias:'Valid Times', dataType: tableua.dataTypeEnum.}
-        { id:'number', alias:'Day Number', dataype: tableau.dataTypeEnum.int},
-        { id:'name', alias:'Day', dataType: tableau.dataTypeEnum.string},
-        { id:'strartTime', alaias:'Start Time', dataType:tableau.dataTypeEnum.datetime},
+        //{ id:'geometry', alias:'Geometry',dataype: tableau.dataTypeEnum.geometry},
+        //{ id:'units', alias:'Unit', dataType: tableau.dataTypeEnum.string},
+        //{ id:'forecastGenerator', alias:'Forecast Generator', dataType: tableau.dataTypeEnum.string},
+        //{ id:'generatedat', alias:'Generated At', dataype:tableau.dataTypeEnum.datetime},
+        //{ id:'updatedTime', alias:'Updated Time', dataType:tableau.dataTypeEnum.datetime},
+        //{ id:'validTimes', alias:'Valid Times', dataType: tableua.dataTypeEnum.}
+        //{ id:'number', alias:'Day Number', dataype: tableau.dataTypeEnum.int},
+        //{ id:'name', alias:'Day', dataType: tableau.dataTypeEnum.string},
+        //{ id:'strartTime', alaias:'Start Time', dataType:tableau.dataTypeEnum.datetime},
         //
         //
         { id:'shortForecast', alias:'Short Description', dataType:tableau.dataTypeEnum.string}
@@ -94,15 +94,15 @@ myConnector.getData = function(table, doneCallback) {
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
                 "id": feat[i].id,
-                "geometry": feat[i].geometry,
-                "units": feat[i].properties.units,
-                "forecastGenerator": feat[i].properties.forecastGenerator,
-                "generatedat":feat[i].properties.generatedat,
-                "updatedTime":feat[i].properties.updatedTime,
-                "number":feat[i].properties.number,
-                "name":feat[i].properties.name,
-                "startTime":feat[i].properties.startTime,
-                "shortForecast":feat[i].properties.shortForecast
+                //"geometry": feat[i].geometry,
+                //"units": feat[i].properties.units,
+                //"forecastGenerator": feat[i].properties.forecastGenerator,
+                //"generatedat":feat[i].properties.generatedat,
+                //"updatedTime":feat[i].properties.updatedTime,
+                //"number":feat[i].properties.number,
+                //"name":feat[i].properties.name,
+                //"startTime":feat[i].properties.startTime,
+                //"shortForecast":feat[i].properties.shortForecast
             });
         }
 
