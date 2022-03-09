@@ -1,0 +1,77 @@
+
+{ "$schema": "https://json-schema.org/draft/2020-12/schema" }
+
+(function () {
+    var myConnector = tableau.makeConnector();
+
+    myConnector.getSchema = function (schemaCallback) {
+        var cols=[
+            {
+                "id": "tableau.dataTypeEnum.string",
+                "type": "Feature",
+                "properties": {
+                  "geometry": 
+                    {"type":"polygon",
+                    "coordinates":[
+                   [ 
+                    {"type": "tableau.dataTypeEnum.float"},
+                    {"type": "tableau.dataTypeEnum.float"}
+                   ]
+                   [ 
+                    {"type": "tableau.dataTypeEnum.float"},
+                    {"type": "tableau.dataTypeEnum.float"}
+                   ]
+                   [ 
+                    {"type": "tableau.dataTypeEnum.float"},
+                    {"type": "tableau.dataTypeEnum.float"}
+                   ]
+                   [ 
+                    {"type": "tableau.dataTypeEnum.float"},
+                    {"type": "tableau.dataTypeEnum.float"}
+                   ]
+                
+                ]
+                    }},
+                  "units": "tableau.dataTypeEnum.string",
+                  "forecastGenerator": "tableau.dataTypeEnum.string",
+                  "generatedAt": "tableau.dataTypeEnum.string($date-time)",
+                  "updateTime": "tableau.dataTypeEnum.string($date-time)",
+                  "elevation": {
+                    "value": "tableau.dataTypeEnum.numberFormat",
+                    "maxValue": "tableau.dataTypeEnum.numberFormat",
+                    "minValue": "tableau.dataTypeEnum.numberFormat",
+                    "unitCode": "tableau.dataTypeEnum.string",
+                    "qualityControl": "tableau.dataTypeEnum.string"
+                  },
+                  "periods":
+                        [{
+                      "number": "tableau.dataTypeEnum.numberFormat",
+                      "name": "tableau.dataTypeEnum.string",
+                      "startTime": "tableau.dataTypeEnum.string($date-time)",
+                      "endTime": "tableau.dataTypeEnum.string($date-time)",
+                      "isDaytime": "tableau.dataTypeEnum.boolean",
+                      "temperatureTrend": "tableau.dataTypeEnum.string",
+                      "windDirection": "tableau.dataTypeEnum.string",
+                      "shortForecast": "tableau.dataTypeEnum.string",
+                      "detailedForecast": "tableau.dataTypeEnum.string"
+                         }]
+                 } ] //end of cols
+    };
+
+
+//////////////////INSERT TABLE SCHEMA HERE///////////////////
+
+
+
+    myConnector.getData = function (table, doneCallback) {
+
+    };
+
+    tableau.registerConnector(myConnector);
+    $(document).ready(function () {
+        $("#submitButton").click(function () {
+            tableau.connectionName = "NOAA Weather Feed";
+            tableau.submit();
+        });
+    });
+})();
