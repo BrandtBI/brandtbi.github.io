@@ -6,19 +6,19 @@
 	var cols = [
         { id : "city_id", alias : "City ID", columnRole: "dimension", dataType : tableau.dataTypeEnum.string},
         { id : "city_name", alias : "City Name", columnRole: "dimension", dataType : tableau.dataTypeEnum.string},
-        { id : "city_coord.lat", alias : "Latitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
+        { id : "city_coord_lat", alias : "Latitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
         { id : "city_coord_lon", alias : "Longitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
         { id : "list_dt", alias : "Time of Data", columnRole: "dimension", dataType : tableau.dataTypeEnum.datetime},
         { id : "list_main_temp", alias : "Temperature", columnRole: "dimension", dataType : tableau.dataTypeEnum.float}
     ];
 
-	var tableSchema = {
+	var tableInfo = {
 		id : "WeatherFeed",
 		alias : "5 Day Weather Forecast",
 		columns : cols
 		};
 	
-	schemaCallback([tableSchema]);
+	schemaCallback([tableInfo]);
 	};
 
 	myConnector.getData = function(table, doneCallback) {
@@ -31,17 +31,24 @@
     //for each result write entry
         for (var i = 0, len = feat.length; i < len; i++) {
         tableData.push({
-            "city_id":feat[i]['City ID'],
-            "city_name":feat[i]['City Name'],
-            "city_coord_lat":feat[i]['Latitude'],
-            "city_coord_lon":feat[i]['Longitude'],
-            "list.dt":feat[i]['Time of Data'],
-            "list_main_temp":feat[i]['Temperature']
+            "city_id":feat[i].city.id,
+            "city_name":feat[i].city.name,
+            "city_coord_lat":feat[i].coord.lat,
+            "city_coord_lon":feat[i].coord.lon,
+            "list_dt":feat[i].dt,
+            "list_main_temp":feat[i].main.temp
+            // "city_id":feat[i]["City ID"],
+            // "city_name":feat[i]["City Name"],
+            // "city_coord_lat":feat[i]["Latitude"],
+            // "city_coord_lon":feat[i]["Longitude"],
+            // "list_dt":feat[i]["Time of Data"],
+            // "list_main_temp":feat[i]["Temperature"]
+            
             // "city_id":city[i].city.id,
             // "city_name":city[i].city.name,
             // "city_coord_lat":city[i].coord.lat,
             // "city_coord_lon":city[i].coord.lon,
-            // "list.dt":list[i].dt,
+            // "list_dt":list[i].dt,
             // "list_main_temp":list[i].main.temp
         });
         }    
