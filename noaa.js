@@ -1,24 +1,22 @@
 (function () {
     var myConnector = tableau.makeConnector();
+//    myConnector.getSchema = function (schemaCallback) {
+//     };
 
-    myConnector.getSchema = function (schemaCallback) {
+//     myConnector.getData = function (table, doneCallback) {
 
-    };
+//     };
 
-    myConnector.getData = function (table, doneCallback) {
-
-    };
-
-    tableau.registerConnector(myConnector);
-    })();
+//     tableau.registerConnector(myConnector);
+//     })();
 
  
-$(document).ready(function () {
-    $("#submitButton").click(function () {
-        tableau.connectionName = "NOAA Weather Feed";
-        tableau.submit();
-    });
-});
+// $(document).ready(function () {
+//     $("#submitButton").click(function () {
+//         tableau.connectionName = "NOAA Weather Feed";
+//         tableau.submit();
+//     });
+// });
 
  
 myConnector.getSchema = function (schemaCallback) {
@@ -28,23 +26,20 @@ myConnector.getSchema = function (schemaCallback) {
         { id:'forecastGenerator', alias:'Forecast Generator', dataType: tableau.dataTypeEnum.string},
         { id:'generatedat', alias:'Generated At', dataype:tableau.dataTypeEnum.datetime},
         { id:'updatedTime', alias:'Updated Time', dataType:tableau.dataTypeEnum.datetime},
-        { id:'validTimes', alias:'Valid Times', dataType: tableua.dataTypeEnum.}
+        { id:'validTimes', alias:'Valid Times', dataType: tableua.dataTypeEnum},
         { id:'number', alias:'Day Number', dataype: tableau.dataTypeEnum.int},
         { id:'name', alias:'Day', dataType: tableau.dataTypeEnum.string},
         { id:'strartTime', alaias:'Start Time', dataType:tableau.dataTypeEnum.datetime},
         //
         { id:'shortForecast', alias:'Short Description', dataType:tableau.dataTypeEnum.string}
-        
-     ];
-
+    ];
     var tableInfo= {
         id: "NOAAWeatherDB",
         alias: "NOAA Weather 7-day Forecast",
         columns: cols
     };
-
     schemaCallback([tableInfo]);
-};
+    };
 
 myConnector.getData = function(table, doneCallback) {
     $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(resp) {
@@ -76,6 +71,4 @@ tableau.registerConnector(myConnector);
     tableau.connectionName = "NOAAWeatherDB";
     tableau.submit();
     });
-    });
-
-
+    });})();
