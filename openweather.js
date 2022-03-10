@@ -50,12 +50,12 @@
 			//for each result write entry
 			for (i = 0; i < list.length; i++) {
             tableData.push({
-                "city_id":city.id,
-                "city_name":city.name,
-                "city_coord_lat":city.coord.lat,
-                "city_coord_lon":city.coord.lon,
+                "city_id":list[i].city.id,
+                "city_name":list[i].city.name,
+                "city_coord_lat":list[i].city.coord.lat,
+                "city_coord_lon":list[i].city.coord.lon,
                 "list.dt":list[i].dt,
-                "list_main_temp":list[i].main[0].temp
+                "list_main_temp":list[i].main.temp
                 
                 // "CITY_ID": city.id,
 				// "CITY" : city.name,
