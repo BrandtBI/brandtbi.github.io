@@ -68,7 +68,7 @@
 // })();
     $(document).ready(function () {
     $("#submitButton").click(function () {
-    tableau.connectionName = "NOAAWeatherDB";
+    tableau.connectionName = "USGS Earthquake Feed";
     tableau.submit();
     });
     });
