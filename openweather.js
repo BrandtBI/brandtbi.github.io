@@ -17,7 +17,7 @@
         { id : "city_coord.lat", alias : "Latitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
         { id : "city_coord_lon", alias : "Longitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
         { id : "list_dt", alias : "Time of Data", columnRole: "dimension", dataType : tableau.dataTypeEnum.datetime},
-        { id : "list_main_temp", alias : "Temparture", columnRole: "dimension", dataType : tableau.dataTypeEnum.float},
+        { id : "list_main_temp", alias : "Temperature", columnRole: "dimension", dataType : tableau.dataTypeEnum.float},
         
 		// { id : "CITY_ID", alias : "CITY_ID", columnRole: "dimension", dataType : tableau.dataTypeEnum.string },
 		// { id : "DATE", alias : "DATE", dataType : tableau.dataTypeEnum.date },
@@ -50,12 +50,12 @@
                 //for each result write entry
         for (i = 0; i < list.length; i++) {
         tableData.push({
-            "city_id":city[i].id,
-            "city_name":city[i].name,
-            "city_coord_lat":city[i].coord.lat,
-            "city_coord_lon":city[i].coord.lon,
-            "list.dt":list[i].dt,
-            "list_main_temp":list[i].main.temp
+            "city_id":city[i]["City ID"],
+            "city_name":city[i]["City Name"],
+            "city_coord_lat":city[i]["Latitude"],
+            "city_coord_lon":city[i]["Longitude"],
+            "list.dt":list[i]["Time of Date"],
+            "list_main_temp":list[i]["Temperature"]
             
             // "CITY_ID": city.id,
             // "CITY" : city.name,
