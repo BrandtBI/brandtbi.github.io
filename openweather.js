@@ -12,12 +12,12 @@
 
 	myConnector.getSchema = function (schemaCallback) {
 	var cols = [
-        { id : "city.id", alias : "City ID", columnRole: "dimension", dataType : tableau.dataTypeEnum.string},
-        { id : "city.name", alias : "City Name", columnRole: "dimension", dataType : tableau.dataTypeEnum.string},
-        { id : "city.coord.lat", alias : "Latitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
-        { id : "city.coord.lon", alias : "Longitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
-        { id : "list.dt", alias : "Time of Data", columnRole: "dimension", dataType : tableau.dataTypeEnum.datetime},
-        { id : "list.main.temp", alias : "Temparture", columnRole: "dimension", dataType : tableau.dataTypeEnum.float},
+        { id : "city_id", alias : "City ID", columnRole: "dimension", dataType : tableau.dataTypeEnum.string},
+        { id : "city_name", alias : "City Name", columnRole: "dimension", dataType : tableau.dataTypeEnum.string},
+        { id : "city_coord.lat", alias : "Latitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
+        { id : "city_coord_lon", alias : "Longitude", columnRole: "dimension", dataType : tableau.dataTypeEnum.geometry},
+        { id : "list_dt", alias : "Time of Data", columnRole: "dimension", dataType : tableau.dataTypeEnum.datetime},
+        { id : "list_main_temp", alias : "Temparture", columnRole: "dimension", dataType : tableau.dataTypeEnum.float},
         
 		// { id : "CITY_ID", alias : "CITY_ID", columnRole: "dimension", dataType : tableau.dataTypeEnum.string },
 		// { id : "DATE", alias : "DATE", dataType : tableau.dataTypeEnum.date },
@@ -50,12 +50,12 @@
 			//for each result write entry
 			for (i = 0; i < list.length; i++) {
             tableData.push({
-                "city.id":city.id,
-                "city.name":city.name,
-                "city.coord.lat":city.coord.lat,
-                "city.coord.lon":city.coord.lon,
+                "city_id":city.id,
+                "city_name":city.name,
+                "city_coord_lat":city.coord.lat,
+                "city_coord_lon":city.coord.lon,
                 "list.dt":list[i].dt,
-                "list.main.temp":list[i].main[0].temp,
+                "list_main_temp":list[i].main[0].temp,
                                 // "CITY_ID": city.id,
 				// "CITY" : city.name,
 				// 'DATE': new Date(list[i].dt * 1000),
