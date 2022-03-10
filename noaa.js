@@ -51,7 +51,7 @@ myConnector.getData = function(table, doneCallback) {
             tableData.push({
                 "geometry": feat[i]["Geometry"],
                 "units": feat[i]["Unit"],
-                "forecastGenerator": feat[i].["Forecast Generatpr"],
+                "forecastGenerator": feat[i]["Forecast Generatpr"],
                 "generatedat":feat[i]["Generated At"],
                 "updatedTime":feat[i]["Updated Time"],
                 "number":feat[i]["Day Number"],
