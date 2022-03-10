@@ -12,13 +12,13 @@
         { id : "list_main_temp", alias : "Temperature", columnRole: "dimension", dataType : tableau.dataTypeEnum.float}
     ];
 
-	var tableInfo = {
+	var tableSchema = {
 		id : "WeatherFeed",
 		alias : "5 Day Weather Forecast",
 		columns : cols
 		};
 	
-	schemaCallback([tableInfo]);
+	schemaCallback([tableSchema]);
 	};
 
 	myConnector.getData = function(table, doneCallback) {
@@ -27,8 +27,8 @@
         var list = data.list;
         var city = data.city;
         tableData = [];
-                //for each result write entry
-        for (i = 0; i < list.length; i++) {
+    //for each result write entry
+        for (var i = 0; i < list.length; i++) {
         tableData.push({
             "city_id":city[i].city.id,
             "city_name":city[i].city.name,
