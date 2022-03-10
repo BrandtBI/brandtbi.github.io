@@ -23,7 +23,6 @@ $(document).ready(function () {
  
 myConnector.getSchema = function (schemaCallback) {
     var cols = [
-        { id:'id', alias:'ID', dataType: tableau.dataTypeEnum.string},
         { id:'geometry', alias:'Geometry',dataype: tableau.dataTypeEnum.geometry},
         { id:'units', alias:'Unit', dataType: tableau.dataTypeEnum.string},
         { id:'forecastGenerator', alias:'Forecast Generator', dataType: tableau.dataTypeEnum.string},
@@ -49,22 +48,21 @@ myConnector.getSchema = function (schemaCallback) {
 
 myConnector.getData = function(table, doneCallback) {
     $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(resp) {
-        var feat = resp.features,
+        var feat = resp,
             tableData = [];
 
         // Iterate over the JSON object
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
-                "id": feat[i].id,
-                "geometry": feat[i].geometry,
-                "units": feat[i].properties.units,
-                "forecastGenerator": feat[i].properties.forecastGenerator,
-                "generatedat":feat[i].properties.generatedat,
-                "updatedTime":feat[i].properties.updatedTime,
-                "number":feat[i].properties.number,
-                "name":feat[i].properties.name,
-                "startTime":feat[i].properties.startTime,
-                "shortForecast":feat[i].properties.shortForecast
+                "geometry": feat[i]["Geometry"],
+                "units": feat[i]["Unit"],
+                "forecastGenerator": feat[i].["Forecast Generatpr"],
+                "generatedat":feat[i]["Generated At"],
+                "updatedTime":feat[i]["Updated Time"],
+                "number":feat[i]["Day Number"],
+                "name":feat[i]["Day"],
+                "startTime":feat[i]["Start Time"],
+                "shortForecast":feat[i]["Short Description"]
             });
         }
 
