@@ -55,8 +55,9 @@
                 "city_coord_lat":city.coord.lat,
                 "city_coord_lon":city.coord.lon,
                 "list.dt":list[i].dt,
-                "list_main_temp":list[i].main[0].temp,
-                                // "CITY_ID": city.id,
+                "list_main_temp":list[i].main[0].temp
+                
+                // "CITY_ID": city.id,
 				// "CITY" : city.name,
 				// 'DATE': new Date(list[i].dt * 1000),
 				// 'MAIN': list[i].weather[0].main,
