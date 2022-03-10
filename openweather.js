@@ -40,7 +40,7 @@
 	var tableData = [];	
 		
 	//Sanford	
-    $.getJSON("http://api.openweathermap.org/geo/1.0/direct?q=Pierre,SD,US&limit=5&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+    $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily/?id=4347778&units=imperial&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
         var list = data.list,
             tableData = [];
 			var city = data.city;
