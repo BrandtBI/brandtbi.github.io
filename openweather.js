@@ -123,7 +123,7 @@
 	
 	$(document).ready(function () {
     $("#submitButton").click(function () {
-        tableau.connectionName = "Weather Forecast Feed";
+        tableau.connectionName = "WeatherFeed";
         tableau.submit();
     });
 });
