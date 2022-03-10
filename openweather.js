@@ -29,14 +29,14 @@
         var feat = resp.features,
         tableData = [];
     //for each result write entry
-        for (var i = 0; i < list.length; i++) {
+        for (var i = 0, len = feat.length; i < len; i++) {
         tableData.push({
-            "city_id":feat[i].id,
-            "city_name":feat[i].name,
-            "city_coord_lat":feat[i].coord.lat,
-            "city_coord_lon":feat[i].coord.lon,
-            "list.dt":feat[i].dt,
-            "list_main_temp":feat[i].main.temp
+            "city_id":feat[i]['City ID'],
+            "city_name":feat[i]['City Name'],
+            "city_coord_lat":feat[i]['Latitude'],
+            "city_coord_lon":feat[i]['Longitude'],
+            "list.dt":feat[i]['Time of Data'],
+            "list_main_temp":feat[i]['Temperature']
             // "city_id":city[i].city.id,
             // "city_name":city[i].city.name,
             // "city_coord_lat":city[i].coord.lat,
@@ -47,7 +47,7 @@
         }    
     
     	table.appendRows(tableData);
-			doneCallback();
+		doneCallback();
 		});
 	};
 	
