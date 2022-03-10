@@ -44,7 +44,7 @@ myConnector.getSchema = function (schemaCallback) {
 myConnector.getData = function(table, doneCallback) {
     $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(resp) {
         var feat = resp,
-            tableData = [];
+        tableData = [];
 
         // Iterate over the JSON object
         for (var i = 0, len = feat.length; i < len; i++) {
