@@ -44,29 +44,54 @@
 		
 	//Sanford	
     $.getJSON("http://api.openweathermap.org/data/2.5/forecast?lat=44.3668&lon=100.3538&units=imperial&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var list = data.list,
-            tableData = [];
-			var city = data.city;
-			//for each result write entry
-			for (i = 0; i < list.length; i++) {
-            tableData.push({
-                "city_id":list[i].city.id,
-                "city_name":list[i].city.name,
-                "city_coord_lat":list[i].city.coord.lat,
-                "city_coord_lon":list[i].city.coord.lon,
-                "list.dt":list[i].dt,
-                "list_main_temp":list[i].main.temp
+        var feat = data.list;
+        var city = data.city;
+        tableData = [];
+                //for each result write entry
+        for (i = 0; i < list.length; i++) {
+        tableData.push({
+            "city_id":city[i].id,
+            "city_name":city[i].name,
+            "city_coord_lat":city[i].coord.lat,
+            "city_coord_lon":city[i].coord.lon,
+            "list.dt":list[i].dt,
+            "list_main_temp":list[i].main.temp
+            
+            // "CITY_ID": city.id,
+            // "CITY" : city.name,
+            // 'DATE': new Date(list[i].dt * 1000),
+            // 'MAIN': list[i].weather[0].main,
+            // 'DESCRIPTION': list[i].weather[0].description,
+            // 'ICON': list[i].weather[0].icon,
+            // 'DEGREES': list[i].deg,
+            // 'CLOUD': list[i].clouds
+            });
+        }    
+    
+    
+    // var list = data.list,
+        //     tableData = [];
+		// 	var city = data.city;
+		// 	//for each result write entry
+		// 	for (i = 0; i < list.length; i++) {
+        //     tableData.push({
+        //         "city_id":list[i].city.id,
+        //         "city_name":list[i].city.name,
+        //         "city_coord_lat":list[i].city.coord.lat,
+        //         "city_coord_lon":list[i].city.coord.lon,
+        //         "list.dt":list[i].dt,
+        //         "list_main_temp":list[i].main.temp
                 
-                // "CITY_ID": city.id,
-				// "CITY" : city.name,
-				// 'DATE': new Date(list[i].dt * 1000),
-				// 'MAIN': list[i].weather[0].main,
-				// 'DESCRIPTION': list[i].weather[0].description,
-				// 'ICON': list[i].weather[0].icon,
-				// 'DEGREES': list[i].deg,
-				// 'CLOUD': list[i].clouds
-				});
-			}
+        //         // "CITY_ID": city.id,
+		// 		// "CITY" : city.name,
+		// 		// 'DATE': new Date(list[i].dt * 1000),
+		// 		// 'MAIN': list[i].weather[0].main,
+		// 		// 'DESCRIPTION': list[i].weather[0].description,
+		// 		// 'ICON': list[i].weather[0].icon,
+		// 		// 'DEGREES': list[i].deg,
+		// 		// 'CLOUD': list[i].clouds
+		// 		});
+		// 	}
 
 			table.appendRows(tableData);
 			
