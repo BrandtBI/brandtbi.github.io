@@ -44,7 +44,7 @@
 		
 	//Sanford	
     $.getJSON("http://api.openweathermap.org/data/2.5/forecast?lat=44.3668&lon=100.3538&units=imperial&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var feat = data.list;
+        var list = data.list;
         var city = data.city;
         tableData = [];
                 //for each result write entry
