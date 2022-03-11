@@ -4,12 +4,12 @@
 	
 	myConnector.getSchema = function (schemaCallback) {
 	var cols = [
-        { id : "city.id", alias : "City ID",  dataType : tableau.dataTypeEnum.string},
+        { id : "id", alias : "City ID",  dataType : tableau.dataTypeEnum.string},
         // { id : "name", alias : "City Name",  dataType : tableau.dataTypeEnum.string},
         // { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         // { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         // { id : "dt", alias : "Time of Data",  dataType : tableau.dataTypeEnum.datetime},
-         { id : "list.main.temp", alias : "Temp",  dataType : tableau.dataTypeEnum.float}
+         { id : "temp", alias : "Temp",  dataType : tableau.dataTypeEnum.float}
     ];
 
 	var tableInfo = {
@@ -32,7 +32,7 @@
         for (var i = 0, len = feat.length; i < len; i++) {
       // for (var i = 0, len = list.length; i < len; i++) {
        tableData.push({
-            "id":city.id,
+            "id":feat[i].city.id,
             // "name":city.name,
             // "lat":city.coord.lat,
             // "lon":city.coord.lon,
