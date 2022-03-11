@@ -30,14 +30,14 @@
         tableData = [];
       //for each result write entry
       //  for (var i = 0, len = feat.length; i < len; i++) {
-       for (i = 0; i < list.length; i++) {
+       for (var i = 0; i < list.length; i++) {
        tableData.push({
             "id":city.id,
             "name":city.name,
             "lat":city.coord.lat,
             "lon":city.coord.lon,
-            "dt":list[i].list.dt,
-            "temp":list[i].list.main.temp
+            "dt":list[i].dt,
+            "temp":list[i].main.temp
             // "id":feat[i].city.id,
             // "name":feat[i].city.name,
             // "lat":feat[i].city.coord.lat,
