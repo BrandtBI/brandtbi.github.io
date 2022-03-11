@@ -32,13 +32,12 @@
         for (var i = 0, len = feat.length; i < len; i++) {
       // for (var i = 0, len = list.length; i < len; i++) {
        tableData.push({
-            "id":city.id,
+            "city.id":["City Id"],
             // "name":city.name,
             // "lat":city.coord.lat,
             // "lon":city.coord.lon,
             // "dt":list[i].dt,
-             "temp":feat[i].list.main.temp
-            
+             "list.main.temp":feat[i]["Temperature"]
             // "id":feat[i].city.id,
             // "name":feat[i].city.name,
             // "lat":feat[i].city.coord.lat,
