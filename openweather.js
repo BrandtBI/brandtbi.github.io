@@ -23,13 +23,13 @@
 
 	myConnector.getData = function(table, doneCallback) {
 	//var tableData = [];	
-	$.getJSON("http://api.openweathermap.org/data/2.5/forecast?lat=44.3668&lon=100.3538&units=imperial&appid=0bed9dddd956dff3252a42b41eccad89", function(resp) {
-      //  var list = data.list;
-      //  var city = data.city;
-        var feat = resp.features,
+	$.getJSON("http://api.openweathermap.org/data/2.5/forecast?lat=44.3668&lon=100.3538&units=imperial&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+        var list = data.list;
+        var city = data.city;
+      //  var feat = resp.features,
         tableData = [];
     //for each result write entry
-        for (var i = 0, len = list.length; i < len; i++) {
+      //  for (var i = 0, len = list.length; i < len; i++) {
        for (i = 0; i < list.length; i++) {
        tableData.push({
             "city_id":feat[i]["City ID"],
