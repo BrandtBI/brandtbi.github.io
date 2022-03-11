@@ -37,7 +37,7 @@
             "lat":city.coord.lat,
             "lon":city.coord.lon,
             "dt":list[i].dt,
-            "temp":list[i].main.temp
+            "temp":list[i].main[0].temp
             // "id":feat[i].city.id,
             // "name":feat[i].city.name,
             // "lat":feat[i].city.coord.lat,
