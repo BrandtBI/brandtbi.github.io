@@ -9,7 +9,7 @@
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time of Data",  dataType : tableau.dataTypeEnum.datetime},
-        { id : "main", alias : "Temperature",  dataType : tableau.dataTypeEnum.float}
+        { id : "temp", alias : "Temperature",  dataType : tableau.dataTypeEnum.float}
     ];
 
 	var tableSchema = {
@@ -43,7 +43,7 @@
             "lat":feat[i].city.coord.lat,
             "lon":feat[i].city.coord.lon,
             "dt":feat[i].list.dt,
-            "main":feat[i].list.main.temp
+            "temp":feat[i].list.main.temp
             // "city_id":feat[i]["City ID"],
             // "city_name":feat[i]["City Name"],
             // "city_coord_lat":feat[i]["Latitude"],
