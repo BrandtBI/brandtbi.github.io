@@ -12,13 +12,13 @@
         { id : "temp", alias : "Temperature",  dataType : tableau.dataTypeEnum.float}
     ];
 
-	var tableSchema = {
+	var tableInfo = {
 		id : "WeatherFeed",
 		alias : "5 Day Weather Forecast",
 		columns : cols
 		};
 	
-	schemaCallback([tableSchema]);
+	schemaCallback([tableInfo]);
 	};
 
 	myConnector.getData = function(table, doneCallback) {
