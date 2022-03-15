@@ -32,7 +32,7 @@ myConnector.getData = function(table, doneCallback) {
     $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(data) {
        // var geometry = data.geometry;
         var properties = data.properties;
-        var periods = data.periods;
+       // var periods = data.periods;
         tableData = [];
         // Iterate over the JSON object
         for (var i = 0, len = properties.length; i < len; i++) {
@@ -44,10 +44,10 @@ myConnector.getData = function(table, doneCallback) {
                 "generatedAt":properties[i].generatedAt,
                 "updatedTime":properties[i].updatedTime,
                 "validTimes":properties[i].validTimes,
-                "number":periods[i].number,
-                "name":periods[i].name,
-                "startTime":periods[i].startTime,
-                "shortForecast":periods[i].shortForecast
+               // "number":periods[i].number,
+               // "name":periods[i].name,
+              //  "startTime":periods[i].startTime,
+              /////  "shortForecast":periods[i].shortForecast
                 // "geometry":feat[i]["Geometry"],
                 // "units":feat[i]["Unit"],
                 // "forecastGenerator":feat[i]["Forecast Generatpr"],
