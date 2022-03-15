@@ -1,11 +1,12 @@
 (function () {
 
     var myConnector = tableau.makeConnector();
-	var lat = -98.486481;
-    var lon = 45.464699;
-    var city = aberdeen
+	
 	myConnector.getSchema = function (schemaCallback) {
-	var cols = [
+        var lat = -98.486481;
+        var lon = 45.464699;
+        var city = aberdeen
+        var cols = [
         { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
