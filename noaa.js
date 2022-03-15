@@ -7,7 +7,7 @@
 
 myConnector.getSchema = function (schemaCallback) {
     var cols = [
-        { id:"geometry", alias:"Geometry",dataType: tableau.dataTypeEnum.geometry},
+       // { id:"geometry", alias:"Geometry",dataType: tableau.dataTypeEnum.geometry},
       //  {id:"coordinates", alias:"Coordinates", dataType: tableau.dataTypeEnum.float},
         { id:"units", alias:"Unit", dataType: tableau.dataTypeEnum.string},
         { id:"forecastGenerator", alias:"Forecast Generator", dataType: tableau.dataTypeEnum.string},
@@ -36,7 +36,7 @@ myConnector.getData = function(table, doneCallback) {
         // Iterate over the JSON object
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
-                "geometry":feat[i].geometry,
+                //"geometry":feat[i].geometry,
                 //"coordinates":feat[i].geometry.coordinates(0,0),
                 "units":feat[i].properties.units,
                 "forecastGenerator":feat[i].properties.forecastGenerator,
