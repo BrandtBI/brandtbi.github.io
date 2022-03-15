@@ -16,7 +16,7 @@ myConnector.getSchema = function (schemaCallback) {
         { id:"validTimes", alias:"Valid Times", dataType: tableau.dataTypeEnum.datetime},
         { id:"number", alias:"Day Number", dataType: tableau.dataTypeEnum.int},
         { id:"name", alias:"Day", dataType: tableau.dataTypeEnum.string},
-        { id:"strartTime", alaias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
+        { id:"startTime", alaias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
         //
         { id:"shortForecast", alias:"Short Description", dataType:tableau.dataTypeEnum.string}
     ];
