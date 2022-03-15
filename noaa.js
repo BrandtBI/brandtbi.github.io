@@ -8,11 +8,12 @@
 myConnector.getSchema = function (schemaCallback) {
     var cols = [
         { id:"geometry", alias:"Geometry",dataype: tableau.dataTypeEnum.geometry},
+        {id:"coordinates", alias:"Coordinates", dataType: tableau.dataTypeEnum.float},
         { id:"units", alias:"Unit", dataType: tableau.dataTypeEnum.string},
         { id:"forecastGenerator", alias:"Forecast Generator", dataType: tableau.dataTypeEnum.string},
         { id:"generatedat", alias:"Generated At", dataype:tableau.dataTypeEnum.datetime},
         { id:"updatedTime", alias:"Updated Time", dataType:tableau.dataTypeEnum.datetime},
-        { id:"validTimes", alias:"Valid Times", dataType: tableau.dataTypeEnum},
+        { id:"validTimes", alias:"Valid Times", dataType: tableau.dataTypeEnum.datetime},
         { id:"number", alias:"Day Number", dataype: tableau.dataTypeEnum.int},
         { id:"name", alias:"Day", dataType: tableau.dataTypeEnum.string},
         { id:"strartTime", alaias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
@@ -36,14 +37,16 @@ myConnector.getData = function(table, doneCallback) {
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
                 "geometry":feat[i].geometry,
-                "units":feat[i].units,
-                "forecastGenerator":feat[i].forecastGenerator,
-                "generatedat":feat[i].generatedat,
-                "updatedTime":feat[i].updatedTime,
-                "number":feat[i].number,
-                "name":feat[i].name,
-                "startTime":feat[i].startTime,
-                "shortForecast":feat[i].shortForecast
+                "coordinates":feat[i].geometry.coordinates[resp],
+                "units":feat[i].properties.units,
+                "forecastGenerator":feat[i].properties.forecastGenerator,
+                "generatedAt":feat[i].properties.generatedAt,
+                "updatedTime":feat[i].properties.updatedTime,
+                "validTimes":feat[i].properties.validTimes,
+                "number":feat[i].periods.number,
+                "name":feat[i].periods.name,
+                "startTime":feat[i].periods.startTime,
+                "shortForecast":feat[i].periods.shortForecast
                 // "geometry":feat[i]["Geometry"],
                 // "units":feat[i]["Unit"],
                 // "forecastGenerator":feat[i]["Forecast Generatpr"],
