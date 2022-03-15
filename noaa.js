@@ -29,24 +29,25 @@ myConnector.getSchema = function (schemaCallback) {
     };
 
 myConnector.getData = function(table, doneCallback) {
-    $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(resp) {
-        var feat = resp,
+    $.getJSON("https://api.weather.gov/gridpoints/ABR/50,52/forecast", function(data) {
+       // var geometry = data.geometry;
+        var properties = data.properties;
+        var periods = data.periods;
         tableData = [];
-
         // Iterate over the JSON object
-        for (var i = 0, len = feat.length; i < len; i++) {
+        for (var i = 0, len = properties.length; i < len; i++) {
             tableData.push({
                 //"geometry":feat[i].geometry,
                 //"coordinates":feat[i].geometry.coordinates(0,0),
                // "units":feat[i].properties.units,
-                "forecastGenerator":feat[i].properties.forecastGenerator,
-                "generatedAt":feat[i].properties.generatedAt,
-                "updatedTime":feat[i].properties.updatedTime,
-                "validTimes":feat[i].properties.validTimes,
-                "number":feat[i].periods.number,
-                "name":feat[i].periods.name,
-                "startTime":feat[i].periods.startTime,
-                "shortForecast":feat[i].periods.shortForecast
+                "forecastGenerator":properties[i].forecastGenerator,
+                "generatedAt":properties[i].generatedAt,
+                "updatedTime":properties[i].updatedTime,
+                "validTimes":properties[i].validTimes,
+                "number":periods[i].number,
+                "name":periods[i].name,
+                "startTime":periods[i].startTime,
+                "shortForecast":periods[i].shortForecast
                 // "geometry":feat[i]["Geometry"],
                 // "units":feat[i]["Unit"],
                 // "forecastGenerator":feat[i]["Forecast Generatpr"],
