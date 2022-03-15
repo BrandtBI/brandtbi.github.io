@@ -20,12 +20,12 @@ myConnector.getSchema = function (schemaCallback) {
         //
         { id:"shortForecast", alias:"Short Description", dataType:tableau.dataTypeEnum.string}
     ];
-    var tableInfo= {
+    var tableSchema= {
         id: "NOAAWeatherDB",
         alias: "NOAA Weather 7-day Forecast",
         columns: cols
     };
-    schemaCallback([tableInfo]);
+    schemaCallback([tableSchema]);
     };
 
 myConnector.getData = function(table, doneCallback) {
@@ -67,7 +67,7 @@ tableau.registerConnector(myConnector);
 })();
     $(document).ready(function () {
     $("#submitButton").click(function () {
-    tableau.connectionName = "USGS Earthquake Feed";
+    tableau.connectionName = "NOAAWeatherDB";
     tableau.submit();
     });
 });
