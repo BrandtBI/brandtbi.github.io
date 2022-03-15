@@ -35,15 +35,24 @@ myConnector.getData = function(table, doneCallback) {
         // Iterate over the JSON object
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
-                "geometry": feat[i]["Geometry"],
-                "units": feat[i]["Unit"],
-                "forecastGenerator": feat[i]["Forecast Generatpr"],
-                "generatedat":feat[i]["Generated At"],
-                "updatedTime":feat[i]["Updated Time"],
-                "number":feat[i]["Day Number"],
-                "name":feat[i]["Day"],
-                "startTime":feat[i]["Start Time"],
-                "shortForecast":feat[i]["Short Description"]
+                "geometry":feat[i].geometry,
+                "units":feat[i].units,
+                "forecastGenerator":feat[i].forecastGenerator,
+                "generatedat":feat[i].generatedat,
+                "updatedTime":feat[i].updatedTime,
+                "number":feat[i].number,
+                "name":feat[i].name,
+                "startTime":feat[i].startTime,
+                "shortForecast":feat[i].shortForecast
+                // "geometry":feat[i]["Geometry"],
+                // "units":feat[i]["Unit"],
+                // "forecastGenerator":feat[i]["Forecast Generatpr"],
+                // "generatedat":feat[i]["Generated At"],
+                // "updatedTime":feat[i]["Updated Time"],
+                // "number":feat[i]["Day Number"],
+                // "name":feat[i]["Day"],
+                // "startTime":feat[i]["Start Time"],
+                // "shortForecast":feat[i]["Short Description"]
             });
         }
 
@@ -58,4 +67,4 @@ tableau.registerConnector(myConnector);
     tableau.connectionName = "USGS Earthquake Feed";
     tableau.submit();
     });
-    });
+});
