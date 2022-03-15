@@ -32,7 +32,7 @@
 	myConnector.getData = function(table, doneCallback) {
 	//var tableData = [];	
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&exclude=current,minutely,hourly,alerts&units=imperial&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var city = data.city;
+        //var city = data.city;
         var daily = data.daily,
        // var feat = resp.features,
         tableData = [];
@@ -41,9 +41,9 @@
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
-            "lat":city.lat,
-            "lon":city.lon,    
-            "dt": daily[i].dt, 
+            "lat":lat,
+            "lon":lon,    
+            "dt":daily[i].dt, 
             "temp":daily[i].temp,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
