@@ -37,7 +37,7 @@ myConnector.getData = function(table, doneCallback) {
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
                 "geometry":feat[i].geometry,
-                "coordinates":feat[i].geometry.coordinates[resp],
+                "coordinates":feat[i].geometry.coordinates(0,0),
                 "units":feat[i].properties.units,
                 "forecastGenerator":feat[i].properties.forecastGenerator,
                 "generatedAt":feat[i].properties.generatedAt,
