@@ -7,14 +7,14 @@
 
 myConnector.getSchema = function (schemaCallback) {
     var cols = [
-        { id:"geometry", alias:"Geometry",dataype: tableau.dataTypeEnum.geometry},
+        { id:"geometry", alias:"Geometry",dataType: tableau.dataTypeEnum.geometry},
         {id:"coordinates", alias:"Coordinates", dataType: tableau.dataTypeEnum.float},
         { id:"units", alias:"Unit", dataType: tableau.dataTypeEnum.string},
         { id:"forecastGenerator", alias:"Forecast Generator", dataType: tableau.dataTypeEnum.string},
-        { id:"generatedat", alias:"Generated At", dataype:tableau.dataTypeEnum.datetime},
+        { id:"generatedAt", alias:"Generated At", dataType:tableau.dataTypeEnum.datetime},
         { id:"updatedTime", alias:"Updated Time", dataType:tableau.dataTypeEnum.datetime},
         { id:"validTimes", alias:"Valid Times", dataType: tableau.dataTypeEnum.datetime},
-        { id:"number", alias:"Day Number", dataype: tableau.dataTypeEnum.int},
+        { id:"number", alias:"Day Number", dataType: tableau.dataTypeEnum.int},
         { id:"name", alias:"Day", dataType: tableau.dataTypeEnum.string},
         { id:"strartTime", alaias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
         //
