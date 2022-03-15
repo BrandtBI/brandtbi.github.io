@@ -34,7 +34,7 @@
 	};
 
 	myConnector.getData = function(table, doneCallback) {
-	//var tableData = [];	
+    var lat, lon, city;	
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
        // var city = data.city;
         var daily = data.daily,
@@ -45,8 +45,9 @@
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
-           // "lat":city.lat,
-           // "lon":city.lon,    
+            "city":city,
+            "lat":lat,
+            "lon":lon,    
             "dt":daily[i].dt, 
             "temp":daily[i].temp.day,
             "min":daily[i].temp.min,
