@@ -114,7 +114,7 @@
         let lat =[-98.486481, -103.598808];
         let lon = [45.464699, 43.766651];
         let city = ["aberdeen", "custer"];
-        lat,lon,city.forEach(lat,lon,city => 
+        for(i=o; i< lat.length || i < lon.length; i++){
         $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat='"+lat+"'&lon='"+lon+"'&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
           
         // var city = data.city;
@@ -139,11 +139,12 @@
             "icon":daily[i].weather.icon
             
         });
+    
         }    
     
     	table.appendRows(tableData);
 		doneCallback();
-        }));
+         }); };
         
         
 	};
