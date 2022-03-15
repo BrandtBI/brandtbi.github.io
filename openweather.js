@@ -1,9 +1,12 @@
 (function () {
 
     var myConnector = tableau.makeConnector();
-	
+	var lat = -98.486481;
+    var lon = 45.464699;
+    var city = aberdeen
 	myConnector.getSchema = function (schemaCallback) {
 	var cols = [
+        { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
@@ -21,18 +24,18 @@
        ];
 
 	var tableSchema = {
-		id : "WeatherFeed",
+		id : "aberdeen",
 		alias : "5 Day Weather Forecast",
 		columns : cols
 		};
-	
+    
 	schemaCallback([tableSchema]);
 	};
 
 	myConnector.getData = function(table, doneCallback) {
 	//var tableData = [];	
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var city = data.city;
+       // var city = data.city;
         var daily = data.daily,
        // var feat = resp.features,
         tableData = [];
@@ -41,8 +44,8 @@
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
-            "lat":city.lat,
-            "lon":city.lon,    
+           // "lat":city.lat,
+           // "lon":city.lon,    
             "dt":daily[i].dt, 
             "temp":daily[i].temp.day,
             "min":daily[i].temp.min,
@@ -66,7 +69,7 @@
 
 	$(document).ready(function () {
     $("#submitButton").click(function () {
-        tableau.connectionName = "WeatherFeed";
+        tableau.connectionName = "Aberdeen";
         tableau.submit();
     });
 });
