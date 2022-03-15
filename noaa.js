@@ -14,14 +14,14 @@ myConnector.getSchema = function (schemaCallback) {
         { id:"generatedAt", alias:"Generated At", dataType:tableau.dataTypeEnum.datetime},
         { id:"updatedTime", alias:"Updated Time", dataType:tableau.dataTypeEnum.datetime},
         { id:"validTimes", alias:"Valid Times", dataType: tableau.dataTypeEnum.datetime},
-        { id:"number", alias:"Day Number", dataType: tableau.dataTypeEnum.int},
-        { id:"name", alias:"Day", dataType: tableau.dataTypeEnum.string},
-        { id:"startTime", alias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
+      //  { id:"number", alias:"Day Number", dataType: tableau.dataTypeEnum.int},
+     //   { id:"name", alias:"Day", dataType: tableau.dataTypeEnum.string},
+       // { id:"startTime", alias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
         //
-        { id:"shortForecast", alias:"Short Description", dataType:tableau.dataTypeEnum.string}
+     //   { id:"shortForecast", alias:"Short Description", dataType:tableau.dataTypeEnum.string}
     ];
     var tableSchema= {
-        id: "NOAAWeatherDB",
+        id: "NOAAWeather",
         alias: "NOAA Weather 7-day Forecast",
         columns: cols
     };
@@ -68,7 +68,7 @@ tableau.registerConnector(myConnector);
 })();
     $(document).ready(function () {
     $("#submitButton").click(function () {
-    tableau.connectionName = "NOAAWeatherDB";
+    tableau.connectionName = "NOAAWeather";
     tableau.submit();
     });
 });
