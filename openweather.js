@@ -41,9 +41,9 @@
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
-            "dt": daily[i].dt,    
             "lat":city.lat,
             "lon":city.lon,    
+            "dt": daily[i].dt, 
             "temp":daily[i].temp,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
