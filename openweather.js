@@ -42,8 +42,8 @@
        tableData.push({
             
             "dt": daily[i].dt,    
-            "lat":city.coord.lat,
-            "lon":city.coord.lon,    
+            "lat":city.lat,
+            "lon":city.lon,    
             "temp":daily[i].temp,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
