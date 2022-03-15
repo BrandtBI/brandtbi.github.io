@@ -9,7 +9,7 @@ myConnector.getSchema = function (schemaCallback) {
     var cols = [
        // { id:"geometry", alias:"Geometry",dataType: tableau.dataTypeEnum.geometry},
       //  {id:"coordinates", alias:"Coordinates", dataType: tableau.dataTypeEnum.float},
-        { id:"units", alias:"Unit", dataType: tableau.dataTypeEnum.string},
+      //  { id:"units", alias:"Unit", dataType: tableau.dataTypeEnum.string},
         { id:"forecastGenerator", alias:"Forecast Generator", dataType: tableau.dataTypeEnum.string},
         { id:"generatedAt", alias:"Generated At", dataType:tableau.dataTypeEnum.datetime},
         { id:"updatedTime", alias:"Updated Time", dataType:tableau.dataTypeEnum.datetime},
@@ -38,7 +38,7 @@ myConnector.getData = function(table, doneCallback) {
             tableData.push({
                 //"geometry":feat[i].geometry,
                 //"coordinates":feat[i].geometry.coordinates(0,0),
-                "units":feat[i].properties.units,
+               // "units":feat[i].properties.units,
                 "forecastGenerator":feat[i].properties.forecastGenerator,
                 "generatedAt":feat[i].properties.generatedAt,
                 "updatedTime":feat[i].properties.updatedTime,
