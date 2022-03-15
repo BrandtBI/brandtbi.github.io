@@ -4,13 +4,21 @@
 	
 	myConnector.getSchema = function (schemaCallback) {
 	var cols = [
-        { id : "id", alias : "City ID",  dataType : tableau.dataTypeEnum.string},
-        { id : "name", alias : "City Name",  dataType : tableau.dataTypeEnum.string},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
-        { id : "dt", alias : "Time of Data",  dataType : tableau.dataTypeEnum.datetime},
-        { id : "temp", alias : "Temp",  dataType : tableau.dataTypeEnum.float}
-    ];
+        { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
+        { id : "temp", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
+        { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.datetime},
+        { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
+        { id : "moonPhase", alias : "Moon Phase",  dataType : tableau.dataTypeEnum.float},
+        { id : "humidity", alias : "Humidity", dataType : tableau.dataTypeEnum.float},
+        { id : "windSpeed", alias : "Wind Speed", dataType : tableau.dataTypeEnum.float},
+        { id : "pop", alias : "Rain Probability", dataType : tableau.dataTypeEnum.float},
+        { id : "rain", alias : "Rain Volume", dataType : tableau.dataTypeEnum.float},
+        { id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
+        { id : "description", alias : "Weather Description", dataType : tableau.dataTypeEnum.string},
+        { id : "icon", alias : "Icon", dataType : tableau.dataTypeEnum.string}
+       ];
 
 	var tableSchema = {
 		id : "WeatherFeed",
@@ -23,34 +31,27 @@
 
 	myConnector.getData = function(table, doneCallback) {
 	//var tableData = [];	
-	$.getJSON("https://api.openweathermap.org/data/2.5/forecast?lat=44&lon=100&units=imperial&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var list = data.list;
+	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&exclude=current,minutely,hourly,alerts&units=imperial&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
         var city = data.city;
+        var daily = data.daily;
        // var feat = resp.features,
         tableData = [];
       //for each result write entry
       //  for (var i = 0, len = feat.length; i < len; i++) {
-       for (var i = 0, len = list.length; i < len; i++) {
+       for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
-            // "id":feat[i].id,
-            // "name":feat[i].city.name,
-            // "lat":feat[i].city.coord.lat,
-            // "lon":feat[i].city.coord.lon,
-            // "dt":feat[i].list.dt,
-            // "temp":feat[i].list.main.temp
-            // "id":city[i]["City ID"],
-            // "name":city[i]["City Name"],
-            // "lat":city[i]["Latitude"],
-            // "lon":city[i]["Longitude"],
-            // "dt":list[i]["Time of Data"],
-            // "temp":list[i]["Temperature"]
-			"id":city.id,
-            "name":city.name,
+            "dt": daily[i].dt,    
             "lat":city.coord.lat,
-            "lon":city.coord.lon,
-            "dt":list[i].dt,
-            "temp":list[i].main.temp
+            "lon":city.coord.lon,    
+            "temp":daily[i].temp,
+            "min":daily[i].temp.min,
+            "max":daily[i].temp.max,
+            "moonPhase":daily[i].moon_phase,
+            "windSpeed":daily[i].wind_speed,
+            "description":daily[i].weather.description,
+            "icon":daily[i].weather.icon
+            
         });
         }    
     
