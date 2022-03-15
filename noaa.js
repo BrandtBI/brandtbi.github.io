@@ -12,7 +12,7 @@ myConnector.getSchema = function (schemaCallback) {
         { id:"forecastGenerator", alias:"Forecast Generator", dataType: tableau.dataTypeEnum.string},
         { id:"generatedat", alias:"Generated At", dataype:tableau.dataTypeEnum.datetime},
         { id:"updatedTime", alias:"Updated Time", dataType:tableau.dataTypeEnum.datetime},
-        { id:"validTimes", alias:"Valid Times", dataType: tableua.dataTypeEnum},
+        { id:"validTimes", alias:"Valid Times", dataType: tableau.dataTypeEnum},
         { id:"number", alias:"Day Number", dataype: tableau.dataTypeEnum.int},
         { id:"name", alias:"Day", dataType: tableau.dataTypeEnum.string},
         { id:"strartTime", alaias:"Start Time", dataType:tableau.dataTypeEnum.datetime},
