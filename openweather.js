@@ -114,9 +114,10 @@
         let lat =[-98.486481, -103.598808];
         let lon = [45.464699, 43.766651];
         let city = ["aberdeen", "custer"];
-        //let url = 'https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89', function(data) {
+        lat,lon,city.forEach(lat,lon,city => 
         $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat='"+lat+"'&lon='"+lon+"'&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-       // var city = data.city;
+          
+        // var city = data.city;
         var daily = data.daily,
        // var feat = resp.features,
         tableData = [];
@@ -142,7 +143,9 @@
     
     	table.appendRows(tableData);
 		doneCallback();
-		});
+        }));
+        
+        
 	};
 	
 
