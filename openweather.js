@@ -7,7 +7,7 @@
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
-        { id : "temp", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
+        { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.datetime},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "moonPhase", alias : "Moon Phase",  dataType : tableau.dataTypeEnum.float},
@@ -31,7 +31,7 @@
 
 	myConnector.getData = function(table, doneCallback) {
 	//var tableData = [];	
-	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&exclude=current,minutely,hourly,alerts&units=imperial&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
         //var city = data.city;
         var daily = data.daily,
        // var feat = resp.features,
@@ -41,10 +41,10 @@
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
-            "lat":daily[i].lat,
-            "lon":daily[i].lon,    
+            "lat":lat,
+            "lon":lon,    
             "dt":daily[i].dt, 
-            "temp":daily[i].temp,
+            "temp":daily[i].temp.day,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
             "moonPhase":daily[i].moon_phase,
