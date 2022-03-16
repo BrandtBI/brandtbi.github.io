@@ -199,8 +199,7 @@
     
      	table.appendRows(tableData);
 	 	});
-     };
- 
+     
 
 
 ///////// CUSTER
@@ -232,9 +231,11 @@
         });
     };  
     
-    	table.appendRows(tableData);
+        table.appendRows(tableData);
+        
+});
 		doneCallback();
-		});
+		};
 	
 	
 
