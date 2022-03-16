@@ -170,16 +170,15 @@
     var tableData=[];
     
     /////////// ABERDEEN
-        var lat = -98.486481;
-        var lon = 45.464699;
-        var city = "aberdeen";
+        
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-       // var city = data.city;
-        var daily = data.daily,
-       // var feat = resp.features,
-        tableData = [];
+       
+       var lat = -98.486481;
+       var lon = 45.464699;
+       var city = "aberdeen";
+       var daily = data.daily;
+       tableData = [];
       //for each result write entry
-      //  for (var i = 0, len = feat.length; i < len; i++) {
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
@@ -205,16 +204,16 @@
 
 
 ///////// CUSTER
+       
+	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
         var lon = -103.598808;
         var lat = -43.766651;
         var city = "custer";
-	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-       // var city = data.city;
-        var daily = data.daily,
-       // var feat = resp.features,
+        var daily = data.daily;
+       
         tableData = [];
       //for each result write entry
-      //  for (var i = 0, len = feat.length; i < len; i++) {
+    
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
             
