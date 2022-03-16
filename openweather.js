@@ -118,7 +118,7 @@
         for (i=0; i<len; ++i){
            if (i in location){
                 x = location[i];
-        return location;}}
+        return location;}};
         $.getJSON("https://api.openweathermap.org/data/2.5/onecall?"+location+"&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
            
         // var city = data.city;
