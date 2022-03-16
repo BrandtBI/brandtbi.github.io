@@ -114,11 +114,10 @@
         // let lat =[-98.486481, -103.598808];
         // let lon = [45.464699, 43.766651];
         // let city = ["aberdeen", "custer"];
-        var i, x,  location = ["lat=-98.486481&lon=-103.598808","lat=-103.598808&lon=43.766651"], len = location.length;
-        for (i=0; i<len; ++i){
-           if (i in location){
-                x = location[i];
-        return location;}};
+        var  location = ["lat=-98.486481&lon=-103.598808","lat=-103.598808&lon=43.766651"];
+        for (i=0; i< location.length; ++i){
+          
+        return location;};
         $.getJSON("https://api.openweathermap.org/data/2.5/onecall?"+location+"&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
            
         // var city = data.city;
