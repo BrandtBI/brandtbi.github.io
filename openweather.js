@@ -31,7 +31,7 @@
 	schemaCallback([tableSchema]);
 	};
 /////////// ABERDEEN
-	myConnector.getData = function(table) {
+	myConnector.getData = function(table, doneCallback) {
         let lat = -98.486481;
         let lon = 45.464699;
         let city = "aberdeen";
@@ -61,11 +61,19 @@
         }    
     
      	table.appendRows(tableData);
-	 	
+	 	doneCallback();
 	 	});
      };
  
-
+     tableau.registerConnector(myConnector);
+    })();
+    
+        $(document).ready(function () {
+        $("#submitButton").click(function () {
+            tableau.connectionName = "Aberdeen";
+            tableau.submit();
+        });
+    });
 
 
 ///////// CUSTER
@@ -109,7 +117,7 @@
 
 	$(document).ready(function () {
     $("#submitButton").click(function () {
-        tableau.connectionName = "Daily Weather";
+        tableau.connectionName = "Custer";
         tableau.submit();
     });
 });
