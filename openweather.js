@@ -108,13 +108,22 @@
     schemaCallback([tableSchema]);
     };
        
-    if (table.tableInfo.id == "aberdeen"){
+    
         myConnector.getData = function(table, doneCallback) {
+            if (table.tableInfo.id == "aberdeen"){
                 let lat = -98.486481;
                 let lon = 45.464699;
                 let city = "aberdeen";
-            $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-               // var city = data.city;
+            }
+            else if (table.tableInfo.id == "custer"){
+                let lon = -103.598808;
+                let lat = -43.766651;
+                let city = "custer";
+            }
+               
+            //$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+               $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {  
+            
                 var daily = data.daily,
                // var feat = resp.features,
                 tableData = [];
@@ -141,43 +150,43 @@
 
 
 
-                if (table.tableInfo.id == "custer"){
-    myConnector.getData = function(table, doneCallback) {
-            let lon = -103.598808;
-            let lat = -43.766651;
-            let city = "custer";
-        $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=43.766651&lon=-103.598808&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-           // var city = data.city;
-            var daily = data.daily,
-           // var feat = resp.features,
-            tableData = [];
-          //for each result write entry
-          //  for (var i = 0, len = feat.length; i < len; i++) {
-           for (var i = 0, len = daily.length; i < len; i++) {
-           tableData.push({
+    //             if (table.tableInfo.id == "custer"){
+    // myConnector.getData = function(table, doneCallback) {
+    //         // let lon = -103.598808;
+    //         // let lat = -43.766651;
+    //         // let city = "custer";
+    //     $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=43.766651&lon=-103.598808&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+    //        // var city = data.city;
+    //         var daily = data.daily,
+    //        // var feat = resp.features,
+    //         tableData = [];
+    //       //for each result write entry
+    //       //  for (var i = 0, len = feat.length; i < len; i++) {
+    //        for (var i = 0, len = daily.length; i < len; i++) {
+    //        tableData.push({
                 
-                "city":city,
-                "lat":lat,
-                "lon":lon,    
-                "dt":daily[i].dt, 
-                "temp":daily[i].temp.day,
-                "min":daily[i].temp.min,
-                "max":daily[i].temp.max,
-                "moonPhase":daily[i].moon_phase,
-                "windSpeed":daily[i].wind_speed,
-                "description":daily[i].weather.description,
-                "icon":daily[i].weather.icon
+    //             "city":city,
+    //             "lat":lat,
+    //             "lon":lon,    
+    //             "dt":daily[i].dt, 
+    //             "temp":daily[i].temp.day,
+    //             "min":daily[i].temp.min,
+    //             "max":daily[i].temp.max,
+    //             "moonPhase":daily[i].moon_phase,
+    //             "windSpeed":daily[i].wind_speed,
+    //             "description":daily[i].weather.description,
+    //             "icon":daily[i].weather.icon
                 
-            });
-            }    
-            });
-        }};
+    //         });
+    //         }    
+    //         });
+    //     }};
         
             table.appendRows(tableData);
             doneCallback();
          
         tableau.registerConnector(myConnector);
-    };}})();
+    };});
     
         $(document).ready(function () {
         $("#submitButton").click(function () {
