@@ -60,10 +60,10 @@
         });
         }    
     
-    	table.appendRows(tableData);
-		doneCallback();
-		});
-    };
+    // 	table.appendRows(tableData);
+	// 	doneCallback();
+	// 	});
+    // };
     
 ///////// CUSTER
     myConnector.getData = function(table, doneCallback) {
