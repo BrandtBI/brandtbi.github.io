@@ -60,11 +60,23 @@
         });
         }    
     
-    // 	table.appendRows(tableData);
-	// 	doneCallback();
-	// 	});
-    // };
-    
+     	table.appendRows(tableData);
+	 	doneCallback();
+	 	});
+     };
+ 
+     
+    tableau.registerConnector(myConnector);
+})();
+
+	$(document).ready(function () {
+    $("#submitButton").click(function () {
+        tableau.connectionName = "Daily Weather";
+        tableau.submit();
+    });
+});
+
+
 ///////// CUSTER
     myConnector.getData = function(table, doneCallback) {
         let lon = -103.598808;
