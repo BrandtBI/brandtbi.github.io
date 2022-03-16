@@ -111,11 +111,13 @@
 	};
 
 	myConnector.getData = function(table, doneCallback) {
-        let lat =[-98.486481, -103.598808];
-        let lon = [45.464699, 43.766651];
-        let city = ["aberdeen", "custer"];
-        for(i=0; i< lat.length || i < lon.length; i++){
-        $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat='"+lat+"'&lon='"+lon+"'&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+        // let lat =[-98.486481, -103.598808];
+        // let lon = [45.464699, 43.766651];
+        // let city = ["aberdeen", "custer"];
+        var x,  location = ["lat=-98.486481&lon=-103.598808","lat=-103.598808&lon=43.766651"];
+        for (x of location){
+        
+        $.getJSON("https://api.openweathermap.org/data/2.5/onecall?'"+location+"'&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
           
         // var city = data.city;
         var daily = data.daily,
