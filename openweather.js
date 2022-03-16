@@ -150,12 +150,12 @@
 		doneCallback();
          });
         
-        
+           };};
 	};
 	
 
     tableau.registerConnector(myConnector);
-};};})();
+})();
 
 	$(document).ready(function () {
     $("#submitButton").click(function () {
