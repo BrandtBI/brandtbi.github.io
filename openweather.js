@@ -114,10 +114,12 @@
         // let lat =[-98.486481, -103.598808];
         // let lon = [45.464699, 43.766651];
         // let city = ["aberdeen", "custer"];
-        var x,  location = ["lat=-98.486481&lon=-103.598808","lat=-103.598808&lon=43.766651"];
-        for (x of location){
+        var i, x,  location = ["lat=-98.486481&lon=-103.598808","lat=-103.598808&lon=43.766651"], len = location.length;
+        for (i=0; i<len; ++i){
+           if (i in location){
+                x = location[i];
         
-        $.getJSON("https://api.openweathermap.org/data/2.5/onecall?'"+location+"'&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+        $.getJSON("https://api.openweathermap.org/data/2.5/onecall?"+location+"&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
           
         // var city = data.city;
         var daily = data.daily,
@@ -153,7 +155,7 @@
 	
 
     tableau.registerConnector(myConnector);
-})();
+};})();
 
 	$(document).ready(function () {
     $("#submitButton").click(function () {
