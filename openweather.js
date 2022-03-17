@@ -16,10 +16,10 @@
 	myConnector.getSchema = function (schemaCallback) {
        
         var cols = [
-        { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
-        { id : "zip", alias : "Zip", dataType : tableau.dataTypeEnum.int},
-        { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
-        { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
+     //   { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
+     //   { id : "zip", alias : "Zip", dataType : tableau.dataTypeEnum.int},
+     //   { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
+     //   { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
         { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
@@ -61,10 +61,10 @@
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-           "city":city,
-            "zip":zip,
-            "lat":lat,
-            "lon":lon,    
+          // "city":city,
+           // "zip":zip,
+           // "lat":lat,
+           // "lon":lon,    
             "dt":daily[i].dt, 
             "temp":daily[i].temp.day,
             "min":daily[i].temp.min,
