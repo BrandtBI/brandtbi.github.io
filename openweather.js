@@ -22,7 +22,7 @@
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
      //  { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
-        { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.datetime},
+        { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "moonPhase", alias : "Moon Phase",  dataType : tableau.dataTypeEnum.float},
         { id : "humidity", alias : "Humidity", dataType : tableau.dataTypeEnum.float},
