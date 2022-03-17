@@ -70,6 +70,7 @@
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
             "moonPhase":daily[i].moon_phase,
+            "humidity":daily[i].humidity,
             "windSpeed":daily[i].wind_speed,
             "pop":daily[i].pop,
             "rain":daily[i].rain,
