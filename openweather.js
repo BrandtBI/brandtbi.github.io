@@ -20,7 +20,7 @@
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
-       { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
+     //  { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.datetime},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "moonPhase", alias : "Moon Phase",  dataType : tableau.dataTypeEnum.float},
@@ -37,14 +37,14 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-        incrementColumnId: "dt"
+      //  incrementColumnId: "dt"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-        var lastDt = parseInt(table.incrementColumnId || -1);
+      //  var lastDt = parseInt(table.incrementColumnId || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
@@ -64,7 +64,7 @@
             "zip":zip,
             "lat":lat,
             "lon":lon,    
-            "dt":daily[i].dt, 
+          //  "dt":daily[i].dt, 
             "temp":daily[i].temp.day,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
