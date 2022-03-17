@@ -66,7 +66,7 @@
            // "lat":lat,
            // "lon":lon,    
             "dt":daily[i].dt, 
-            "temp":daily[i].temp.day,
+            "day":daily[i].temp.day,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
             "moonPhase":daily[i].moon_phase,
