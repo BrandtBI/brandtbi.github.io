@@ -44,7 +44,7 @@
     };
 
 	myConnector.getData = function(table, doneCallback) {
-        var lastDt = parseDate(table.incrementColumnId || -1);
+        var lastDt = parseInt(table.incrementColumnId || -1);
         var tableData=[];
     
 //////////// ABERDEEN
