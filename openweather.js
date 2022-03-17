@@ -81,67 +81,67 @@
      
 
 
-///////// CUSTER
+// ///////// CUSTER
        
-	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-103.58808&lat=43.766651&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var lon = -103.598808;
-        var lat = -43.766651;
-        var zip = 57730;
-        var city = "Custer";
-        var daily = data.daily;
-        tableData = [];
-      //for each result write entry
-        for (var i = 0, len = daily.length; i < len; i++) {
-        tableData.push({
-            "city":city,
-            "zip":zip,
-            "lat":lat,
-            "lon":lon,    
-            "dt":daily[i].dt, 
-           // "temp":daily[i].temp.day,
-            "min":daily[i].temp.min,
-            "max":daily[i].temp.max,
-            "moonPhase":daily[i].moon_phase,
-            "windSpeed":daily[i].wind_speed,
-            "description":daily[i].weather.description,
-            "icon":daily[i].weather.icon
+// 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-103.58808&lat=43.766651&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+//         var lon = -103.598808;
+//         var lat = -43.766651;
+//         var zip = 57730;
+//         var city = "Custer";
+//         var daily = data.daily;
+//         tableData = [];
+//       //for each result write entry
+//         for (var i = 0, len = daily.length; i < len; i++) {
+//         tableData.push({
+//             "city":city,
+//             "zip":zip,
+//             "lat":lat,
+//             "lon":lon,    
+//             "dt":daily[i].dt, 
+//            // "temp":daily[i].temp.day,
+//             "min":daily[i].temp.min,
+//             "max":daily[i].temp.max,
+//             "moonPhase":daily[i].moon_phase,
+//             "windSpeed":daily[i].wind_speed,
+//             "description":daily[i].weather.description,
+//             "icon":daily[i].weather.icon
             
-        });
-    };  
+//         });
+//     };  
     
-        table.appendRows(tableData);
-         });
+//         table.appendRows(tableData);
+//          });
 
 
-////////// MOBRIDGE
-    $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-100.42791&lat=45.53722&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-        var lon = -100.42791;
-        var lat = 45.53722;
-        var city = "Mobridge";
-        var zip = 57601;
-        var daily = data.daily;
-        tableData = [];
-      //for each result write entry
-      for (var i = 0, len = daily.length; i < len; i++) {
-       tableData.push({
-            "city":city,
-            "zip":zip,
-            "lat":lat,
-            "lon":lon,    
-            "dt":daily[i].dt, 
-          //  "temp":daily[i].temp.day,
-            "min":daily[i].temp.min,
-            "max":daily[i].temp.max,
-            "moonPhase":daily[i].moon_phase,
-            "windSpeed":daily[i].wind_speed,
-            "description":daily[i].weather.description,
-            "icon":daily[i].weather.icon
+// ////////// MOBRIDGE
+//     $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-100.42791&lat=45.53722&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+//         var lon = -100.42791;
+//         var lat = 45.53722;
+//         var city = "Mobridge";
+//         var zip = 57601;
+//         var daily = data.daily;
+//         tableData = [];
+//       //for each result write entry
+//       for (var i = 0, len = daily.length; i < len; i++) {
+//        tableData.push({
+//             "city":city,
+//             "zip":zip,
+//             "lat":lat,
+//             "lon":lon,    
+//             "dt":daily[i].dt, 
+//           //  "temp":daily[i].temp.day,
+//             "min":daily[i].temp.min,
+//             "max":daily[i].temp.max,
+//             "moonPhase":daily[i].moon_phase,
+//             "windSpeed":daily[i].wind_speed,
+//             "description":daily[i].weather.description,
+//             "icon":daily[i].weather.icon
             
-        });
-    };  
+//         });
+//     };  
     
-        table.appendRows(tableData);
-         });   
+//         table.appendRows(tableData);
+//          });   
     
 // ////////// BROOKINGS
 //   $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.798393&lat=44.311359&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
