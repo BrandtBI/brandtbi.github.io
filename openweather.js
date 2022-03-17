@@ -36,14 +36,16 @@
 	var tableSchema = {
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
-		columns : cols
+		columns : cols,
+        incrementColumnId: "dt"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-    var tableData=[];
+        var lastDt = parseDate(table.incrementColumnId || -1);
+        var tableData=[];
     
 //////////// ABERDEEN
         
