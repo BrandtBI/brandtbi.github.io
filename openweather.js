@@ -17,6 +17,7 @@
        
         var cols = [
         { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
+        { id : "zip", alias : "Zip", dataType : tableau.dataTypeEnum.int},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
@@ -64,12 +65,15 @@
             "zip":zip,
             "lat":lat,
             "lon":lon,    
-           "dt":daily[i].dt, 
+            "dt":daily[i].dt, 
           //  "temp":daily[i].temp.day,
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
             "moonPhase":daily[i].moon_phase,
             "windSpeed":daily[i].wind_speed,
+            "pop":daily[i].pop,
+            "rain":daily[i].rain,
+            "snow":daily[i].snow,
             "description":daily[i].weather.description,
             "icon":daily[i].weather.icon
             
