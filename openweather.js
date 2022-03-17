@@ -20,7 +20,7 @@
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
-        { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
+       { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.datetime},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "moonPhase", alias : "Moon Phase",  dataType : tableau.dataTypeEnum.float},
@@ -1232,7 +1232,7 @@ doneCallback();
 	$(document).ready(function () {
     $("#submitButton").click(function () {
        
-        tableau.connectionData = getCity();//JSON.stringify(cityObj);
+       // tableau.connectionData = getCity();//JSON.stringify(cityObj);
         tableau.connectionName = "Daily Weather";
         tableau.submit();
     });
