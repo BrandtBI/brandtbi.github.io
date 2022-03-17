@@ -17,7 +17,7 @@
        
         var cols = [
         { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
-        { id : "zip", alias : "Zip", dataType : tableau.geographicRolEnum.zip_code_postcode},
+        { id : "zip", alias : "Zip", dataType : tableau.geographicRoleEnum.zip_code_postcode},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
