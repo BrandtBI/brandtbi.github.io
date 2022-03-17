@@ -47,7 +47,7 @@
         var lastDt = parseInt(table.incrementColumnId || -1);
         var tableData=[];
     
-//////////// ABERDEEN
+//////////// ABERDEEN /////
         
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
        
