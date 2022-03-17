@@ -1231,6 +1231,8 @@ doneCallback();
 
 	$(document).ready(function () {
     $("#submitButton").click(function () {
+       
+        tableau.connectionData = getCity();//JSON.stringify(cityObj);
         tableau.connectionName = "Daily Weather";
         tableau.submit();
     });
