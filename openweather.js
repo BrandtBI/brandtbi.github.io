@@ -28,8 +28,8 @@
         { id : "humidity", alias : "Humidity", dataType : tableau.dataTypeEnum.float},
         { id : "windSpeed", alias : "Wind Speed", dataType : tableau.dataTypeEnum.float},
         { id : "pop", alias : "Rain Probability", dataType : tableau.dataTypeEnum.float},
-        { id : "rain", alias : "Rain Volume", dataType : tableau.dataTypeEnum.float},
-        { id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
+        //////{ id : "rain", alias : "Rain Volume", dataType : tableau.dataTypeEnum.float},
+        //////{ id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
         { id : "description", alias : "Weather Description", dataType : tableau.dataTypeEnum.string},
         { id : "icon", alias : "Icon", dataType : tableau.dataTypeEnum.string}
        ];
@@ -73,8 +73,8 @@
             "humidity":daily[i].humidity,
             "windSpeed":daily[i].wind_speed,
             "pop":daily[i].pop,
-            "rain":daily[i].rain,
-            "snow":daily[i].snow,
+           ////// "rain":daily[i].rain, /// not available
+           ////// "snow":daily[i].snow, /// not available
             "description":daily[i].weather.description,
             "icon":daily[i].weather.icon
             
