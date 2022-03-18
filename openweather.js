@@ -1375,7 +1375,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
 	$(document).ready(function () {
     $("#submitButton").click(function () {
        
-       tableau.connectionData = getCity();//JSON.stringify(cityObj);
+     //  tableau.connectionData = getCity();//JSON.stringify(cityObj);
         tableau.connectionName = "Daily Weather";
         tableau.submit();
     });
