@@ -38,14 +38,14 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-      //  incrementColumnId: "dt"
+        incrementColumnId: "dt"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-      //  var lastDt = parseInt(table.incrementColumnId || -1);
+        var lastDt = parseInt(table.incrementColumnId || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
@@ -61,7 +61,7 @@
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-           "city":city,
+     "city":city,
             "zip":zip,
             "lat":lat,
             "lon":lon,    
@@ -98,7 +98,7 @@
       //for each result write entry
         for (var i = 0, len = daily.length; i < len; i++) {
         tableData.push({
-            "city":city,
+      "city":city,
             "zip":zip,
             "lat":lat,
             "lon":lon,    
@@ -133,7 +133,7 @@
       //for each result write entry
       for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-        "city":city,
+  "city":city,
         "zip":zip,
         "lat":lat,
         "lon":lon,    
@@ -202,18 +202,22 @@
   //for each result write entry
    for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zop":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -233,18 +237,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.773659&lat=43
   //for each result write entry
   for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-       "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+   "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -266,18 +274,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-99.292053&lat=43
   //for each result write entry
   for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -298,18 +310,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.571991&lat=43
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -331,18 +347,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.700333&lat=43
   //for each result write entry
    for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -362,18 +382,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.115067&lat=44
   //for each result write entry
    for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -393,18 +417,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.115067&lat=44
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -425,19 +453,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.682564&lat=44
   //for each result write entry
    for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -457,18 +488,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-98.844528&lat=43
 
    for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -487,18 +522,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-99.955673&lat=45
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -517,18 +556,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.520088&lat=45
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -549,18 +592,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.697273&lat=43
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -579,18 +626,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-99.441498&lat=44
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -610,18 +661,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-103.474358&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -640,18 +695,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-98.541473&lat=43
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -671,18 +730,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.750938&lat=45
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -702,18 +765,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.550346&lat=44
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -732,18 +799,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-103.765198&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -762,18 +833,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.113953&lat=44
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -793,18 +868,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.483093&lat=42
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -823,18 +902,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-98.988426&lat=44
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -853,18 +936,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.63562&lat=45.
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -883,18 +970,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-100.350967&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -913,18 +1004,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-100.032066&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -943,18 +1038,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-102.159317&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -973,18 +1072,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.049797&lat=45
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1003,18 +1106,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.049797&lat=45
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1033,18 +1140,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.897293&lat=42
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1063,18 +1174,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-103.509079&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1093,18 +1208,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.862846&lat=42
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1123,18 +1242,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-101.074028&lat=4
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1154,18 +1277,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.929207&lat=42
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1184,18 +1311,22 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.113953&lat=44
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
@@ -1214,34 +1345,31 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.397278&lat=42
   //for each result write entry
 for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-        "city":city,
-        "zip":zip,
-        "lat":lat,
-        "lon":lon,    
-        "dt":daily[i].dt, 
-        "temp":daily[i].temp.day,
-        "min":daily[i].temp.min,
-        "max":daily[i].temp.max,
-        "moonPhase":daily[i].moon_phase,
-        "windSpeed":daily[i].wind_speed,
-        "description":daily[i].weather.description,
-        "icon":daily[i].weather.icon
+    "city":city,
+    "zip":zip,
+    "lat":lat,
+    "lon":lon,    
+    "dt":daily[i].dt, 
+    "day":daily[i].temp.day,
+    "min":daily[i].temp.min,
+    "max":daily[i].temp.max,
+    "moonPhase":daily[i].moon_phase,
+    "humidity":daily[i].humidity,
+    "windSpeed":daily[i].wind_speed,
+    "pop":daily[i].pop,
+   ////// "rain":daily[i].rain, /// not available
+   ////// "snow":daily[i].snow, /// not available
+    "description":daily[i].weather.description,
+    "icon":daily[i].weather.icon
         
     });
 };  
 
     table.appendRows(tableData);
      });
-
-
-
-
-
-
-doneCallback();
-		};
-	
-	
+    
+     doneCallback();
+	};
 
     tableau.registerConnector(myConnector);
 })();
@@ -1254,4 +1382,3 @@ doneCallback();
         tableau.submit();
     });
 });
-})();
