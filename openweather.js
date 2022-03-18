@@ -1363,13 +1363,12 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+    }  
 
     table.appendRows(tableData);
-     });
-    
-     doneCallback();
-	};
+    doneCallback();
+    });	
+    };
 
     tableau.registerConnector(myConnector);
 })();
