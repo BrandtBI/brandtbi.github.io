@@ -61,7 +61,7 @@
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-     "city":city,
+            "city":city,
             "zip":zip,
             "lat":lat,
             "lon":lon,    
@@ -77,7 +77,7 @@
            ////// "snow":daily[i].snow, /// not available
             "description":daily[i].weather.description,
             "icon":daily[i].weather.icon
-            
+ 
         });
         }    
     
@@ -98,7 +98,7 @@
       //for each result write entry
         for (var i = 0, len = daily.length; i < len; i++) {
         tableData.push({
-      "city":city,
+         "city":city,
             "zip":zip,
             "lat":lat,
             "lon":lon,    
@@ -116,7 +116,7 @@
             "icon":daily[i].weather.icon
             
         });
-    };  
+    }
     
         table.appendRows(tableData);
          });
@@ -133,7 +133,7 @@
       //for each result write entry
       for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-  "city":city,
+        "city":city,
         "zip":zip,
         "lat":lat,
         "lon":lon,    
@@ -151,7 +151,7 @@
         "icon":daily[i].weather.icon
             
         });
-    };  
+    }
     
         table.appendRows(tableData);
          });   
@@ -185,7 +185,7 @@
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });  
@@ -220,7 +220,7 @@
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -237,7 +237,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.773659&lat=43
   //for each result write entry
   for (var i = 0, len = daily.length; i < len; i++) {
    tableData.push({
-   "city":city,
+        "city":city,
     "zip":zip,
     "lat":lat,
     "lon":lon,    
@@ -255,7 +255,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.773659&lat=43
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -292,7 +292,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-99.292053&lat=43
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -328,7 +328,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -365,7 +365,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.700333&lat=43
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -400,7 +400,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.115067&lat=44
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -435,7 +435,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -471,7 +471,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.682564&lat=44
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });   
@@ -506,7 +506,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-98.844528&lat=43
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -540,7 +540,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -574,7 +574,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -610,7 +610,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+} 
 
     table.appendRows(tableData);
      }); 
@@ -644,7 +644,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -679,7 +679,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -713,7 +713,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -748,7 +748,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -783,7 +783,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -817,7 +817,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -851,7 +851,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -886,7 +886,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -920,7 +920,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+} 
 
     table.appendRows(tableData);
      }); 
@@ -954,7 +954,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -988,7 +988,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -1022,7 +1022,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -1056,7 +1056,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      }); 
@@ -1090,7 +1090,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1124,7 +1124,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1158,7 +1158,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1192,7 +1192,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1226,7 +1226,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1260,7 +1260,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1295,7 +1295,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1329,7 +1329,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "icon":daily[i].weather.icon
         
     });
-};  
+}  
 
     table.appendRows(tableData);
      });
@@ -1366,12 +1366,11 @@ for (var i = 0, len = daily.length; i < len; i++) {
     }  
 
     table.appendRows(tableData);
+   });	
     doneCallback();
-    });	
-    };
+   };
 
     tableau.registerConnector(myConnector);
-})();
 
 	$(document).ready(function () {
     $("#submitButton").click(function () {
@@ -1381,3 +1380,4 @@ for (var i = 0, len = daily.length; i < len; i++) {
         tableau.submit();
     });
 });
+})();
