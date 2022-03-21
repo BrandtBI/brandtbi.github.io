@@ -1366,9 +1366,10 @@ for (var i = 0, len = daily.length; i < len; i++) {
     }  
 
     table.appendRows(tableData);
-   });	
+   	
     doneCallback();
-   };
+  }); 
+  };
 
     tableau.registerConnector(myConnector);
 
