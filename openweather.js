@@ -38,14 +38,14 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-    //incrementColumnId: "dt"
+    incrementColumnId: "dt"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-      //  var lastDt = parseInt(table.incrementColumnId || -1);
+        var lastDt = parseInt(table.incrementColumnId || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
