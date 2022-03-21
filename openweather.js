@@ -28,7 +28,7 @@
         { id : "humidity", alias : "Humidity", dataType : tableau.dataTypeEnum.float},
         { id : "windSpeed", alias : "Wind Speed", dataType : tableau.dataTypeEnum.float},
         { id : "pop", alias : "Rain Probability", dataType : tableau.dataTypeEnum.float},
-        //////{ id : "rain", alias : "Rain Volume", dataType : tableau.dataTypeEnum.float},
+        { id : "rain", alias : "Rain Volume", dataType : tableau.dataTypeEnum.float},
         //////{ id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
         { id : "description", alias : "Weather Description", dataType : tableau.dataTypeEnum.string},
         { id : "icon", alias : "Icon", dataType : tableau.dataTypeEnum.string}
@@ -73,7 +73,7 @@
             "humidity":daily[i].humidity,
             "windSpeed":daily[i].wind_speed,
             "pop":daily[i].pop,
-           ////// "rain":daily[i].rain, /// not available
+           "rain":daily[i].rain,
            ////// "snow":daily[i].snow, /// not available
             "description":daily[i].weather.description,
             "icon":daily[i].weather.icon
@@ -110,7 +110,7 @@
             "humidity":daily[i].humidity,
             "windSpeed":daily[i].wind_speed,
             "pop":daily[i].pop,
-           ////// "rain":daily[i].rain, /// not available
+           "rain":daily[i].rain,
            ////// "snow":daily[i].snow, /// not available
             "description":daily[i].weather.description,
             "icon":daily[i].weather.icon
@@ -145,7 +145,7 @@
         "humidity":daily[i].humidity,
         "windSpeed":daily[i].wind_speed,
         "pop":daily[i].pop,
-       ////// "rain":daily[i].rain, /// not available
+       "rain":daily[i].rain,
        ////// "snow":daily[i].snow, /// not available
         "description":daily[i].weather.description,
         "icon":daily[i].weather.icon
@@ -179,7 +179,7 @@
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -214,7 +214,7 @@
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -249,7 +249,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.773659&lat=43
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -286,7 +286,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-99.292053&lat=43
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -322,7 +322,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -359,7 +359,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.700333&lat=43
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -394,7 +394,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.115067&lat=44
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -429,7 +429,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -465,7 +465,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-96.682564&lat=44
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -500,7 +500,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-98.844528&lat=43
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -534,7 +534,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -568,7 +568,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -604,7 +604,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -638,7 +638,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -673,7 +673,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -707,7 +707,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -742,7 +742,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -777,7 +777,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -811,7 +811,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -845,7 +845,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -880,7 +880,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -914,7 +914,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -948,7 +948,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -982,7 +982,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1016,7 +1016,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1050,7 +1050,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1084,7 +1084,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1118,7 +1118,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1152,7 +1152,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1186,7 +1186,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1220,7 +1220,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1254,7 +1254,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1289,7 +1289,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1323,7 +1323,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
@@ -1357,7 +1357,7 @@ for (var i = 0, len = daily.length; i < len; i++) {
     "humidity":daily[i].humidity,
     "windSpeed":daily[i].wind_speed,
     "pop":daily[i].pop,
-   ////// "rain":daily[i].rain, /// not available
+   "rain":daily[i].rain,
    ////// "snow":daily[i].snow, /// not available
     "description":daily[i].weather.description,
     "icon":daily[i].weather.icon
