@@ -20,7 +20,7 @@
         { id : "zip", alias : "Zip", dataType : tableau.dataTypeEnum.int},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
-        { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.datetime},
+        { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.int},
         { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
