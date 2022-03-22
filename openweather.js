@@ -30,7 +30,7 @@
         { id : "cwindSpeed", alias : "Current Wind Speed", dataType : tableau.dataTypeEnum.float},
         { id : "cpop", alias : "Current Rain Probability", dataType : tableau.dataTypeEnum.float},
         { id : "crain", alias : "Current Rain Volume", dataType : tableau.dataTypeEnum.float},
-        //////{ id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
+        /////{ id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
         { id : "cdescription", alias : "Current Weather Description", dataType : tableau.dataTypeEnum.string},
         { id : "cicon", alias : "Current Icon", dataType : tableau.dataTypeEnum.string},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.int},
