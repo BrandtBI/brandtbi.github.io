@@ -40,14 +40,14 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-    incrementColumnId: "dt"
+    incrementColumnId: "id"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-        var lastdt = parseInt(table.incrementValue || -1);
+        var lastid = parseInt(table.incrementValue || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
@@ -58,8 +58,6 @@
        var city = "Aberdeen";
        var zip = 57401;
        var daily = data.daily;
-       //var id = for (let x = 0, )
-       //var id = 1;
        tableData = [];
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
