@@ -22,7 +22,7 @@
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.int},
-  // //      { id : "date", dataType : tableau.dataTypeEnum.datetime},
+        { id : "date", dataType : tableau.dataTypeEnum.datetime},
   // // { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
@@ -68,7 +68,7 @@
             "lat":lat,
             "lon":lon,    
             "dt":daily[i].dt,
-           //// "date":date, 
+            "date":new Date(daily.dt), 
             "day":daily[i].temp.day, //Day Temperature
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
