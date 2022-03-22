@@ -40,14 +40,14 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-    incrementColumnId: "id"
+    incrementColumnId: "date"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-        var lastid = parseInt(table.incrementValue || -1);
+        var lastdate = parseInt(table.incrementValue || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
@@ -68,7 +68,7 @@
             "lat":lat,
             "lon":lon,    
             "dt":daily[i].dt,
-            "date":new Date(daily[i].dt*1000), 
+            "date":(new Date(daily[i].dt*1000).toLocaleString()), 
             "day":daily[i].temp.day, //Day Temperature
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
