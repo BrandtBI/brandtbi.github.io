@@ -52,12 +52,12 @@
 //////////// ABERDEEN /////
         
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-       var id = 1;
        var lat = -98.486481;
        var lon = 45.464699;
        var city = "Aberdeen";
        var zip = 57401;
        var daily = data.daily;
+       var id = 1;
        tableData = [];
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
@@ -1378,11 +1378,11 @@ $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lon=-97.113953&lat=44
     var city = "Madison";
     var zip = 57042;
     var daily = data.daily;
-        var id = 1;
-        tableData = [];
+    var id = 1;
+    tableData = [];
       //for each result write entry
-        for (var i = 0, len = daily.length; i < len; i++) {
-        tableData.push({
+    for (var i = 0, len = daily.length; i < len; i++) {
+    tableData.push({
             "id":id++,   
             "city":city,
     "zip":zip,
