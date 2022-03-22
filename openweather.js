@@ -52,8 +52,8 @@
 //////////// ABERDEEN /////
         
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-       var id = 1++;
-       //var x = lastid++;
+       var id = x;
+       var x = 1++;
        var lat = -98.486481;
        var lon = 45.464699;
        var city = "Aberdeen";
