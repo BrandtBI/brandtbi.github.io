@@ -84,7 +84,7 @@
         });
         }    
     
-     	table.appendRows(dataArray);
+     	table.appendRows(tableData);
 //	 	});
      
 
