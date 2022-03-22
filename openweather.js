@@ -68,7 +68,7 @@
             "lat":lat,
             "lon":lon,    
             "dt":daily[i].dt,
-            "date":new Date(daily.dt), 
+            "date":(new Date(daily[i].dt*1000).toLocaleString()), 
             "day":daily[i].temp.day, //Day Temperature
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
