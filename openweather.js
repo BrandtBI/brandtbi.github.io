@@ -58,7 +58,7 @@
        var city = "Aberdeen";
        var zip = 57401;
        var daily = data.daily;
-       var date = new Date(dt);
+       var date = new Date(daily.dt);
        tableData = [];
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
