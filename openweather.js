@@ -46,7 +46,7 @@
     };
 
 	myConnector.getData = function(table, doneCallback) {
-        var lastid = parseInt(table.incrementColumnId || -1);
+        var lastid = parseInt(table.incrementValue || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
@@ -84,7 +84,7 @@
         });
         }    
     
-     	table.appendRows(tableData);
+     	table.appendRows(dataArray);
 //	 	});
      
 
