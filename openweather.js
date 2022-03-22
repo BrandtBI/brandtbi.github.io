@@ -70,7 +70,7 @@
             "lat":lat,
             "lon":lon,    
             "dt":daily[i].dt,
-            "date":date, 
+           //// "date":date, 
             "day":daily[i].temp.day, //Day Temperature
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
