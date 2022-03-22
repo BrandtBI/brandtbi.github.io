@@ -23,7 +23,7 @@
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.int},
         { id : "date", dataType : tableau.dataTypeEnum.datetime},
-  // //    { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
+  // // { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "moonPhase", alias : "Moon Phase",  dataType : tableau.dataTypeEnum.float},
@@ -58,11 +58,13 @@
        var city = "Aberdeen";
        var zip = 57401;
        var daily = data.daily;
-       var date = new Date(daily.dt);
+       //var id = for (let x = 0, )
+       //var id = 1;
        tableData = [];
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
+            "id":[i],
             "city":city,
             "zip":zip,
             "lat":lat,
