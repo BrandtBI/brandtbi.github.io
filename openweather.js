@@ -22,6 +22,7 @@
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.int},
+        { id : "date", dataType : tableau.dataTypeEnum.datetime},
   // //    { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
         { id : "max", alias : "Max Temp",  dataType : tableau.dataTypeEnum.float},
@@ -39,14 +40,14 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-    incrementColumnId: "id"
+    incrementColumnId: "dt"
 		};
     
 	schemaCallback([tableSchema]);
     };
 
 	myConnector.getData = function(table, doneCallback) {
-        var lastid = parseInt(table.incrementValue || -1);
+        var lastdt = parseInt(table.incrementValue || -1);
         var tableData=[];
     
 //////////// ABERDEEN /////
@@ -57,18 +58,17 @@
        var city = "Aberdeen";
        var zip = 57401;
        var daily = data.daily;
-       var id = x++;
-       var x = 1
+       var date = new Date(dt);
        tableData = [];
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-            "id":id,
             "city":city,
             "zip":zip,
             "lat":lat,
             "lon":lon,    
-            "dt":daily[i].dt, 
+            "dt":daily[i].dt,
+            "date":date, 
             "day":daily[i].temp.day, //Day Temperature
             "min":daily[i].temp.min,
             "max":daily[i].temp.max,
