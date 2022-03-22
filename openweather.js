@@ -52,7 +52,8 @@
 //////////// ABERDEEN /////
         
 	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
-       var id = lastid;
+       var id = 1;
+       var x = lastid++;
        var lat = -98.486481;
        var lon = 45.464699;
        var city = "Aberdeen";
@@ -62,7 +63,7 @@
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-            "id":id,
+            "id":[x].id,
             "city":city,
             "zip":zip,
             "lat":lat,
