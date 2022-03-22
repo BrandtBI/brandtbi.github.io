@@ -94,11 +94,13 @@
         var zip = 57730;
         var city = "Custer";
         var daily = data.daily;
+   var id = 1;
         tableData = [];
       //for each result write entry
         for (var i = 0, len = daily.length; i < len; i++) {
         tableData.push({
-         "city":city,
+         "id":id++,   
+        "city":city,
             "zip":zip,
             "lat":lat,
             "lon":lon,    
