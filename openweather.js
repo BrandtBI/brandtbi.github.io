@@ -21,6 +21,18 @@
         { id : "zip", alias : "Zip", dataType : tableau.dataTypeEnum.int},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
         { id : "lon", alias : "Longitude",  dataType : tableau.dataTypeEnum.float},
+        { id : "cdt", alias : "Current Forecast", dataType : tableau.dataTypeEnum.int},
+        { id : "cday", alias : "Current Temperature",  dataType : tableau.dataTypeEnum.float},
+        { id : "cmin", alias : "Current Min Temp",  dataType : tableau.dataTypeEnum.float},
+        { id : "cmax", alias : "Current Max Temp",  dataType : tableau.dataTypeEnum.float},
+        { id : "cmoonPhase", alias : "Current Moon Phase",  dataType : tableau.dataTypeEnum.float},
+        { id : "chumidity", alias : "Current Humidity", dataType : tableau.dataTypeEnum.float},
+        { id : "cwindSpeed", alias : "Current Wind Speed", dataType : tableau.dataTypeEnum.float},
+        { id : "cpop", alias : "Current Rain Probability", dataType : tableau.dataTypeEnum.float},
+        { id : "crain", alias : "Current Rain Volume", dataType : tableau.dataTypeEnum.float},
+        //////{ id : "snow", alias : "Snow Volume", dataType : tableau.dataTypeEnum.float},
+        { id : "cdescription", alias : "Current Weather Description", dataType : tableau.dataTypeEnum.string},
+        { id : "cicon", alias : "Current Icon", dataType : tableau.dataTypeEnum.string},
         { id : "dt", alias : "Time Forecasted",  dataType : tableau.dataTypeEnum.int},
         { id : "day", alias : "Temperature",  dataType : tableau.dataTypeEnum.float},
         { id : "min", alias : "Min Temp",  dataType : tableau.dataTypeEnum.float},
@@ -51,7 +63,7 @@
     
 //////////// ABERDEEN /////
         
-	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
+	$.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat=44.36832&lon=-100.350967&units=imperial&exclude=minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89", function(data) {
        var id = 1;
        var lat = -98.486481;
        var lon = 45.464699;
@@ -67,6 +79,18 @@
             "zip":zip,
             "lat":lat,
             "lon":lon,    
+            "cdt":current.cdt,
+            "cday":current.cday,
+            "cmin":current.min,
+            "cmax":current.max,
+            "cmoonPhase":current.cmoonPhase,
+            "chumidity":current.chumidity,
+            "cwindspeed": current.cwindspeed,
+            "cpop":current.cpop,
+            "crain":current.crain,
+            ////"csnow":current.snow,
+            "cdescription":current.cdescription,
+            "cicon":current.cicon,
             "dt":daily[i].dt, 
             "day":daily[i].temp.day,
             "min":daily[i].temp.min,
