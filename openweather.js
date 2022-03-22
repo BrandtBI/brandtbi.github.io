@@ -63,7 +63,7 @@
       //for each result write entry
        for (var i = 0, len = daily.length; i < len; i++) {
        tableData.push({
-            "id":id++,
+            "id":lastid.id,
             "city":city,
             "zip":zip,
             "lat":lat,
