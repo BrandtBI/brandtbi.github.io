@@ -16,7 +16,7 @@
 	myConnector.getSchema = function (schemaCallback) {
        
         var cols = [
-        { id : "id", datatype : tableau.dataTypeEnum.int},
+        { id : "id", dataType : tableau.dataTypeEnum.int},
         { id : "city", alias : "City", dataType : tableau.dataTypeEnum.string},
         { id : "zip", alias : "Zip", dataType : tableau.dataTypeEnum.int},
         { id : "lat", alias : "Latitude",  dataType : tableau.dataTypeEnum.float},
