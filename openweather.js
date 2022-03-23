@@ -40,7 +40,7 @@
 		id : "dailyForecast",
 		alias : "5 Day Weather Forecast",
 		columns : cols,
-    incrementColumnId: "id"
+    incrementColumnId: "date"
 		};
     
 	schemaCallback([tableSchema]);
