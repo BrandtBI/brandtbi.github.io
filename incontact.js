@@ -76,7 +76,8 @@
         myConnector.getData = function(table, doneCallback) {   
             var tableData = [];
             
-        $.getJSON("https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-21&endDate=2022-03-22&fields=contactId%2CmasterContactId", function(data) {
+        //$.getJSON("https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-21&endDate=2022-03-22&fields=contactId%2CmasterContactId", function(data) {
+            $.getJSON("http://localhost:8889/api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-21&endDate=2022-03-22&fields=contactId%2CmasterContactId", function(data) {
             var completedContacts = data.completedContacts;
             tableData = [];
             //for each result write entry
