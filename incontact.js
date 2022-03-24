@@ -10,25 +10,7 @@
 
     var myConnector = tableau.makeConnector();
 	
-	myConnector.getSchema = function (schemaCallback) {
-       
-        var cols = [
-            { id : "contactID", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
-            { id : "masterContactID", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
-            
-
-       ];
-
-	var tableSchema = {
-		id : "inContact",
-		alias : "Completed Contacts",
-		columns : cols,
-        // incrementColumnId: "date"
-		};
     
-	schemaCallback([tableSchema]);
-    };
-
 	myConnector.init = function(initCallback) {
         tableau.authType = tableau.authTypeEnum.custom;
         
@@ -68,6 +50,28 @@
             }
         }
     };
+
+
+
+	myConnector.getSchema = function (schemaCallback) {
+       
+        var cols = [
+            { id : "contactID", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
+            { id : "masterContactID", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
+            
+
+       ];
+
+	var tableSchema = {
+		id : "inContact",
+		alias : "Completed Contacts",
+		columns : cols,
+        // incrementColumnId: "date"
+		};
+    
+	schemaCallback([tableSchema]);
+    };
+
  
         myConnector.getData = function(table, doneCallback) {   
             var tableData = [];
