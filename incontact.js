@@ -37,8 +37,8 @@
         xhr.open("GET", url);
         xhr.setRequestHeader("Accept", "application/json");
         xhr.setRequestHeader("Authorization", "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpY1NQSWQiOjIxNCwiaWNBZ2VudElkIjoyMDA3NTAwNywic3ViIjoidXNlcjoyMDA3NTAwNyIsImlzcyI6Imh0dHBzOi8vYXBpLmluY29udGFjdC5jb20iLCJpY0JVSWQiOjQ1OTU5NjQsImdpdmVuX25hbWUiOiJTdGVwaGVuIiwiYXVkIjoiRGV2ZWxvcGVyUG9ydGFsQE5JQ0VpbkNvbnRhY3QgSW5jLiIsIm5hbWUiOiJzdGVwaGVuLnNsb3R0ZXJAYnJhbmR0aW5mby5jb20iLCJ0ZW5hbnRJZCI6IjExZTllYmU0LTliY2ItOGI5ZS04MTA3LTAwNTA1NmExNDA3NCIsImZhbWlseV9uYW1lIjoiU2xvdHRlciIsImljQ2x1c3RlcklkIjoiQzE0IiwibmJmIjoxNjQ4MTI5NTk2LCJpY1Njb3BlIjoiMSwyLDQsNSw2LDcsOCwxMCwxMiIsImlhdCI6MTY0ODEyOTU5NiwiZXhwIjoxNjQ4MTMzMTk2fQ.DKDYqR2ydXXzbpRbbsW86AeNxIGde_YRKCjGTcRPgpRiNSS2o7wG7hsWkWhnGS0lv8CeMG8mYytRzLKHDpfSs24mg-5iYRIDekmalPFfyHGQo6ip1hw4NrNzy6tUMg_3BIZglnJ6z9vuCUT7V8HKZY1WDAAcJJB7b7OSY4gh4fSHXbYvV7wbAsIooMZfmYwK_rCmTIWBh35EgAKyiuLUmrQNym2AlC4kmy0UsBr23ZhuFuZSTT_YRN3DZukux3rLqnsLwrWvZ04xczSAQ3cfIVs79K-_8tOgRg_B2aIT7Lgm_OSvAeJ1Q6DaqIAB7hjxaryuW5po5pZuJ3oPTaDqqA");
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
+        xhr.onreadystatechange = function (data) {
+         // if (xhr.readyState === 4) {
             var completedContacts = data.completedContacts;
             tableData = [];
            //for each result write entry
@@ -48,7 +48,7 @@
                  "masterContactID": completedContacts[i].masterContactID    
                 });
              }    
-        }; 
+       // }; 
             //  console.log(xhr.status);
            //   console.log(xhr.responseText);
          //  }};
