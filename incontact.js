@@ -5,62 +5,38 @@
 /////  Created on 3/24/2022
 /////  Modified on 
 //////////////////////////////////////////////////////////////////
+//var token='';
 
 (function () {
 
     var myConnector = tableau.makeConnector();
-	
-    
-	myConnector.init = function(initCallback) {
-        tableau.authType = tableau.authTypeEnum.custom;
-        
-      // If we are in the auth phase we only want to show the UI needed for auth
-      if (tableau.phase == tableau.phaseEnum.authPhase) {
-        $("#getvenuesbutton").css('display', 'none');
-      }
-
-      //if (tableau.phase == tableau.phaseEnum.gatherDataPhase) {
-        // If the API that WDC is using has an endpoint that checks
-        // the validity of an access token, that could be used here.
-        // Then the WDC can call tableau.abortForAuth if that access token
-        // is invalid.
-     //   "issuer": "https://cxone.niceincontact.com",
-      //  "authorization_endpoint": "https://cxone.niceincontact.com/auth/authorize"
-     // }
-
-        var accessToken = Cookies.get("accessToken");
-        console.log("Access token is '" + accessToken + "'");
-        var hasAuth = (accessToken && accessToken.length > 0) || tableau.password.length > 0;
-        updateUIWithAuthState(hasAuth);   
-
-        initCallback();
-        
-        // If we are not in the data gathering phase, we want to store the token
-        // This allows us to access the token in the data gathering phase
-            if (tableau.phase == tableau.phaseEnum.interactivePhase || tableau.phase == tableau.phaseEnum.authPhase) {
-            if (hasAuth) {
-            tableau.password = accessToken;
-
-            if (tableau.phase == tableau.phaseEnum.authPhase) {
-              // Auto-submit here if we are in the auth phase
-              tableau.submit()
-            }
-
-            return;
-            }
-        }
-    };
-
-
 
 	myConnector.getSchema = function (schemaCallback) {
-       
+    // // // //    $.ajax({
+    // // // //        url:"https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-22&endDate=2022-03-23&fields=contactID%2CmasterContactID",
+    // // // //         type:"GET",
+    // // // //         headers:{
+    // // // //             'Autjorization': 'Token' + JSON.parse(tableau.connectionDate)['apiKey']
+    // // // //         },
+    // // // //         success : function(response){
+    // // // //             var flatten = objectFlatten(response)
+    // // // //             var columns = []
+    // // // //             for (var key in flatten) {
+    // // // //                 var id = key.replace(/[^A-Za-z0-9_]+/g, '')
+    // // // //                 columns.push({
+    // // // //                     id: id,
+    // // // //                     alias: key,
+    // // // //                     dataType: tableauType(flatten[key])
+    // // // //                 })
+    // // // //             }
+    // // // //         }
+    // // // //     })
+
+
         var cols = [
             { id : "contactID", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
             { id : "masterContactID", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
-            
-
-       ];
+        ];
 
 	var tableSchema = {
 		id : "inContact",
@@ -73,13 +49,16 @@
     };
 
  
-        myConnector.getData = function(table, doneCallback) {   
-            var tableData = [];
-            
-        //$.getJSON("https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-21&endDate=2022-03-22&fields=contactId%2CmasterContactId", function(data) {
-            $.getJSON("http://localhost:8889/api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-21&endDate=2022-03-22&fields=contactId%2CmasterContactId", function(data) {
-            var completedContacts = data.completedContacts;
-            tableData = [];
+    myConnector.getData = function(table, doneCallback) {   
+        $.ajax({
+                url:"https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-22&endDate=2022-03-23&fields=contactID%2CmasterContactID",
+                type:"GET",
+                headers:{
+                        'Authorization': 'Token' + JSON.parse(tableau.connectionDate)['apiKey']
+                    },
+            success : function(response){
+                var completedContacts = data.completedContacts;
+                tableData = [];
             //for each result write entry
             for (var i = 0, len = completedContacts.length; i < len; i++) {
                 tableData.push({
@@ -87,19 +66,22 @@
                     "masterContactID": completedContacts[i].masterContactID    
                     });
             }    
-        }); 
-            
+                    
         table.appendRows(tableData);
         doneCallback();
-    };
+    },
     }); 
     
-
+    };
         tableau.registerConnector(myConnector);
 
         $(document).ready(function () {
         $("#submitButton").click(function () {
             tableau.connectionName = "Completed Contacts";
+            tableau.connectionData = JSON.stringify({
+                'apiKey' : $("api.Key").val(),
+            });  
+            })
             tableau.submit();
         });
     });
