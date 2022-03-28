@@ -14,8 +14,8 @@
 	myConnector.getSchema = function (schemaCallback) {
 
     var cols = [
-            { id : "contactID", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
-            { id : "masterContactID", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
+            { id : "contactId", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
+            { id : "masterContactId", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
     ];
 
 	var tableSchema = {
@@ -33,7 +33,7 @@
         
         $.ajax({
             type:'GET',    
-            url: "https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-22&endDate=2022-03-23&fields=contactID%2CmasterContactID",
+            url: "https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-23&endDate=2022-03-24&fields=contactID%2CmasterContactID",
             dataType:'json',
             //contentType:'application/json'
             //processData:false,
@@ -49,8 +49,8 @@
             //for each result write entry
             for (var i = 0, len = contacts.length; i < len; i++) {
                 tableData.push({
-                    "contactID":contacts[i].contactID,
-                    "masterContactID": contacts[i].masterContactID    
+                    "contactId":contacts[i].contactId,
+                    "masterContactId": contacts[i].masterContactId    
                 });
             }    
                     
