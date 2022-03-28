@@ -31,7 +31,6 @@
 	schemaCallback([tableSchema]);
     };
 
- 
     myConnector.getData = function(table, doneCallback) {   
         tableData = [];
         $.ajax({
