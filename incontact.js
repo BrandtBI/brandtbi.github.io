@@ -5,71 +5,111 @@
 /////  Created on 3/24/2022
 /////  Modified on 
 //////////////////////////////////////////////////////////////////
-//var token='';
+
 
 (function () {
+ 
+/////////// Retrieve keys from GitHub and save as variables.
+    var accessKeySecret = 
+        await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+            owner: 'brandtbi',
+            repo: 'brandtbi.github.io',
+            secret_name: 'incaccesskeys'
+        })
+        
+        var accessKeyId = 
+        await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+            owner: 'brandtbi',
+            repo: 'brandtbi.github.io',
+            secret_name: 'incaccesskeyid'
+        })
+
+/////////// InContact Post
+    var url = "https://na1.nice-incontact.com/authentication/v1/token/access-key";
+    var xhrp = new XMLHttpRequest();
+    xhrp.open("POST", url);
+    
+    xhrp.setRequestHeader("Accept", "application/json");
+    xhrp.setRequestHeader("Host", "na1.nice-incontact.com");
+    xhrp.setRequestHeader("Content-Type", "application/json");
+    //xhrp.setRequestHeader("Authorization", "Bearer ...");
+    body = {
+        "accessKeyId": accessKeyId,
+        "accessKeySecret": accessKeySecret
+    };
+    xhrp.onreadystatechange = function () {
+        if (xhrp.readyState === 4) {  ///https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+        const inckey = JSON.parse(xhrp.responseText);
+            return{
+            'access_token':inckey.response.access_token
+            }
+        }
+        else{
+            console.error();
+        }
+    } 
+    //xhrp.send(body);
+
+    
+
+
+///////// Tableau Connector
 
     var myConnector = tableau.makeConnector();
-
-    
-
-
     myConnector.getSchema = function (schemaCallback) {
-
+    
         var cols = [
-            { id : "contactID", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
-            { id : "masterContactID", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
+                { id : "contactId", alias: "Contact ID", dataType : tableau.dataTypeEnum.int},
+                { id : "masterContactId", alias: "Master ID", dataType : tableau.dataTypeEnum.int}
         ];
-
-	var tableSchema = {
-		id : "inContact",
-		alias : "Completed Contacts",
-		columns : cols,
-        // incrementColumnId: "date"
-		};
     
-	schemaCallback([tableSchema]);
-    };
-
-    myConnector.getData = function(table, doneCallback) {   
-        tableData = [];
-        $.ajax({
-            type:"GET",    
-            url:"https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-26&endDate=2022-03-27&fields=contactId%2CmasterContactId",
-            //accept:"application/json",
-            beforeSend:function(xhr){
-                xhr.setRequestHeader('Accept','application/json');
-                xhr.setRequestHeader('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpY1NQSWQiOjYzLCJpY0FnZW50SWQiOjIwNzg2NDA1LCJzdWIiOiJ1c2VyOjIwNzg2NDA1IiwiaXNzIjoiaHR0cHM6Ly9hcGkuaW5jb250YWN0LmNvbSIsImljQlVJZCI6NDU5NTk2NCwiZ2l2ZW5fbmFtZSI6IlN0ZXBoYW5pZSIsImF1ZCI6IkRldmVsb3BlclBvcnRhbEBOSUNFaW5Db250YWN0IEluYy4iLCJuYW1lIjoic3RlcGhhbmllLmRhdmlzQGJyYW5kdGluZm8uY29tIiwidGVuYW50SWQiOiIxMWU5ZWJlNC05YmNiLThiOWUtODEwNy0wMDUwNTZhMTQwNzQiLCJmYW1pbHlfbmFtZSI6IkRhdmlzIiwiaWNDbHVzdGVySWQiOiJDMTQiLCJuYmYiOjE2NDg1MDIwNDEsImljU2NvcGUiOiIxLDIsNCw1LDYsNyw4LDEwLDEyIiwiaWF0IjoxNjQ4NTAyMDQxLCJleHAiOjE2NDg1MDU2NDF9.hV3u-QCZeNea-tlMZVJdEYcq2sFpQWHN_sxC49XZR7KRExNNsb0MWtcvcCaXqyhe8Aw4CU1jTO6ORRa9swZgwasAWOAO4cJU3eyBmpq0JWBTZU4BeCGXWAu84NNLCaHHhLnjJEcAwa-ckVlFOV_fGsFZOZDHxm690nMBdpgPN3ZFCureSM9dHOeH6x2SzQHLNYAPkJmKBvQeE7JAHqDrEyyfe17xXjJ5uUYjJuhrWYSpXna93YUsRKaVEP32dlJgKVy9ZZJxfHv2dmDk3NUnGP3Y2_13203Eh8hC4ANazvQNO5WIHay7BSdd0Og816Vh1W9s3FagLNptHjf11dyevg')
-                    },
-            success : function(data){
-               if(data.completedContacts){
-                var contacts = data.completedContacts;
-                
-            //for each result write entry
-            var ii;
-            for (ii = 0; ii <contacts.length; ++i) {
-                tableData.push({
-                    "contactID":contacts[i].contactID,
-                    "masterContactID": contacts[i].masterContactID    
-                    });
-            }    
-                    
-        table.appendRows(tableData);
-        doneCallback();
-    }
-
-    },
-
+        var tableSchema = {
+            id : "inContact",
+            alias : "Completed Contacts",
+            columns : cols
+            // incrementColumnId: "date"
+            };
+        
+        schemaCallback([tableSchema]);
+        };
     
-    });
-};
-        tableau.registerConnector(myConnector);
-
-        $(document).ready(function () {
-        $("#submitButton").click(function () {
-            tableau.connectionName = "Completed Contacts"
+     
+        myConnector.getData = function(table, doneCallback) {   
             
-            })
-            tableau.submit();
-        });
+            $.ajax({
+                type:'GET',    
+                url: "https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-23&endDate=2022-03-24&fields=contactID%2CmasterContactID",
+                dataType:'json',
+                //contentType:'application/json'
+                //processData:false,
+                beforeSend:function(xhr){
+                    xhr.setRequestHeader('accept','application/json');
+                    xhr.setRequestHeader('Authorization','Bearer' + access_token)
+                },
+                success: function(data){
+          //  });
+           /////$.getJSON("https://api-c14.incontact.com/inContactAPI/services/v23.0/contacts/completed?startDate=2022-03-22&endDate=2022-03-23&fields=contactID%2CmasterContactID",function(data){
+                var contacts = data.completedContacts;
+                tableData = [];
+                //for each result write entry
+                for (var i = 0, len = contacts.length; i < len; i++) {
+                    tableData.push({
+                        "contactId":contacts[i].contactId,
+                        "masterContactId": contacts[i].masterContactId    
+                    });
+                }    
+                        
+            table.appendRows(tableData);
+            doneCallback();
+        },
     });
+    };
+            tableau.registerConnector(myConnector);
+    
+            $(document).ready(function () {
+            $("#submitButton").click(function () {
+                tableau.connectionName = "Completed Contacts"
+                tableau.submit();
+            });
+        });
+        })();
