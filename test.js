@@ -1,7 +1,44 @@
-https://api.openweathermap.org/data/2.5/onecall?id=5767918&exclude=minutely,hourly,alerts&units=imperial&lang=en&appid=0bed9dddd956dff3252a42b41eccad89
+import fetch from "node-fetch";
 
-https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%27-98.486481,-103.598808%27&lon=%2745.464699,43.766651%27&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89
-
-https://api.openweathermap.org/data/2.5/onecall?%27lat=-98.486481&lon=-103.598808,lat=-103.598808&lon=43.766651%27&units=imperial&exclude=current,minutely,hourly,alerts&lang=en&appid=0bed9dddd956dff3252a42b41eccad89
-
-&dt=1647748800&units=imperial&exclude=hourly&lang=en&appid=0bed9dddd956dff3252a42b41eccad89
+/////////// Retrieve keys from GitHub and save as variables.
+    
+    var accessKeySecret = 
+        async function(){
+            await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+            owner: 'brandtbi',
+            repo: 'brandtbi.github.io',
+            secret_name: 'incaccesskeys'
+            })
+        }
+    console.log("Got here");
+    
+    var accessKeyId = 
+        async function(){
+            await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+                owner: 'brandtbi',
+                repo: 'brandtbi.github.io',
+                secret_name: 'incaccesskeyid'
+            })
+    }
+/////////// InContact Post
+        
+        const url='https://na1.nice-incontact.com/authentication/v1/token/access-key';
+        let data ={
+            "accessKeyId": accessKeyId,
+            "accessKeySecret": accessKeySecret
+        }
+        let fetchData ={
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                body: JSON.stringify(data),
+                headers:{
+                        'content-Type':'application/json'
+                }
+        }
+        fetch(url, fetchData)    
+            .then(function(){
+                console.log(response.access_token);
+            }
+            
+        );
